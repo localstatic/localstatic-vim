@@ -5,7 +5,6 @@
 
 " Environment {
 	set nocompatible
-	set background=dark
 
 	" Windows Compatible {
 	" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
@@ -14,7 +13,7 @@
 		set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 	endif
 	" }
-	"
+
 	" Setup Bundle Support {
 	" The next two lines ensure that the ~/.vim/bundle/ system works
 		set rtp+=~/.vim/bundle/vundle
@@ -25,12 +24,23 @@
 " Bundles {
 	
 	Bundle 'gmarik/vundle'
+
+	" Color schemes
 	Bundle 'Wombat'
+	Bundle 'Solarized'
+	Bundle 'molokai'
+	Bundle 'jellybeans.vim'
+	Bundle 'twerth/ir_black'
+	Bundle 'tomorrow'
+	Bundle 'earendel'
 
 	" General
 	Bundle 'scrooloose/nerdtree'
+	Bundle 'scrooloose/nerdcommenter'
 	Bundle 'tpope/vim-surround'
+	Bundle 'tpope/vim-repeat'
 	Bundle 'AutoClose'
+	Bundle 'bufexplorer.zip'
 
 	" Development
 	Bundle 'tpope/vim-fugitive'
@@ -39,15 +49,22 @@
 	Bundle 'majutsushi/tagbar'
 	Bundle 'Shougo/neocomplcache'
 
+	" HTML
+	Bundle 'othree/html5.vim'
+
 	" PHP
     Bundle 'spf13/PIV'
+
+	" HAML/Sass/SCSS - I mostly care about Sass/SCSS
+	Bundle 'tpope/vim-haml'
+
+	" Ruby
+	Bundle 'vim-ruby/vim-ruby'
+
 " }
 
 " General {
     set background=dark         " Assume a dark background
-    if !has('gui')
-        "set term=$TERM          " Make arrow and other keys work
-    endif
     filetype plugin indent on   " Automatically detect file types.
     syntax on                   " syntax highlighting
     set mouse=a                 " automatically enable mouse usage
@@ -60,12 +77,14 @@
     set spell                       " spell checking on
     set hidden                      " allow buffer switching without saving
 
+	set nobackup " Don't create annoying backup files
+	set noswapfile " Swap files? Meh.
+
     " Setting up the directories {
-        set backup                      " backups are nice ...
         if has('persistent_undo')
-            set undofile                "so is persistent undo ...
-            set undolevels=1000         "maximum number of changes that can be undone
-            set undoreload=10000        "maximum number lines to save for undo on a buffer reload
+            set undofile                " so is persistent undo ...
+            set undolevels=1000         " maximum number of changes that can be undone
+            set undoreload=10000        " maximum number lines to save for undo on a buffer reload
         endif
         " Could use * rather than *.*, but I prefer to leave .files unsaved
         au BufWinLeave *.* silent! mkview  "make vim save view (state) (folds, cursor, etc)
@@ -75,12 +94,6 @@
 
 " Vim UI {
 	color desert
-    "color solarized                 " load a colorscheme
-    "    let g:solarized_termtrans=1
-    "    let g:solarized_termcolors=256
-    "    let g:solarized_contrast="high"
-    "    let g:solarized_visibility="high"
-    set tabpagemax=15               " only show 15 tabs
     set showmode                    " display the current mode
 
     set cursorline                  " highlight current line
@@ -95,18 +108,48 @@
     if has('statusline')
         set laststatus=2
 
-        " Broken down into easily includeable segments
-        set statusline=%<%f\    " Filename
-        set statusline+=%w%h%m%r " Options
-        set statusline+=%{fugitive#statusline()} "  Git Hotness
-        set statusline+=\ [%{&ff}/%Y]            " filetype
-        set statusline+=\ [%{getcwd()}]          " current dir
-        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-    endif
+        " Broken down into easily includable segments
+
+		"set statusline=                          " empty line to facilitate
+												 "" easy moving around of segments
+        ""set statusline+=\ %<%f\                  " Filename
+		"set statusline+=%t
+        "set statusline+=%w%h%m%r                 " Options
+        ""set statusline+=%{fugitive#statusline()} " Git Info
+        ""set statusline+=\ [%{getcwd()}]          " Current directory
+        "set statusline+=\ [%{&ff}/%Y]            " Filetype
+        "set statusline+=%=                       " split between left- and right-aligned info"
+		"set statusline+=%-14.(%l,%c%V%)\ %p%%    " file nav info
+
+
+		"set statusline=                          " empty line to facilitate
+												 "" easy moving around of segments
+		"set statusline=%t       "tail of the filename
+		"set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+		"set statusline+=%{&ff}] "file format
+		"set statusline+=%h      "help file flag
+		"set statusline+=%m      "modified flag
+		"set statusline+=%r      "read only flag
+		"set statusline+=%y      "filetype
+		"set statusline+=%=      "left/right separator
+		"set statusline+=%c,     "cursor column
+		"set statusline+=%l/%L   "cursor line/total lines
+		"set statusline+=\ %P    "percent through file
+
+		" My custom statusline
+		set statusline=                          " empty line to facilitate
+		                                         " easy moving around of segments
+        set statusline+=\ [%{getcwd()}]          " Current directory
+		set statusline+=\ %t
+        set statusline+=%w%h%m%r                 " Options
+        set statusline+=\ [%{&ff}/%Y]            " Filetype
+        set statusline+=%=                       " split between left- and right-aligned info"
+		set statusline+=%-8.(%l,%c%V%)\ %p%%    " file nav info
+	endif
 
     set backspace=indent,eol,start  " backspace for dummies
     set linespace=0                 " No extra spaces between rows
-    set nu                          " Line numbers on
+    set number                      " Line numbers on
     set showmatch                   " show matching brackets/parenthesis
     set incsearch                   " find as you type search
     set hlsearch                    " highlight search terms
@@ -122,23 +165,22 @@
     "set list
     "set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
-
 " }
 
 " Formatting {
-
-    set nowrap                      " wrap long lines
-    set autoindent                  " indent at the same level of the previous line
-    set shiftwidth=4                " use indents of 4 spaces
-    "set expandtab                   " tabs are spaces, not tabs
-	set noexpandtab                 " tabs are tabs, damnit!
-    set tabstop=4                   " an indentation every four columns
-    set softtabstop=4               " let backspace delete indent
-    "set matchpairs+=<:>                " match, to be used with % 
-    set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
+    set nowrap                       " wrap long lines
+    set autoindent                   " indent at the same level of the previous line
+    set shiftwidth=4                 " use indents of 4 spaces
+    "set expandtab                    " tabs are spaces, not tabs
+	set noexpandtab                  " tabs are tabs, damnit!
+    set tabstop=4                    " an indentation every four columns
+    set softtabstop=4                " let backspace delete indent
+    "set matchpairs+=<:>              " match, to be used with % 
+    set pastetoggle=<F12>            " pastetoggle (sane indentation on pastes)
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
     " Remove trailing whitespaces and ^M chars
-    autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+	"autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+	autocmd FileType python set noexpandtab
 " }
 
 " Key (re)Mappings {
@@ -151,12 +193,6 @@
     nnoremap j gj
     nnoremap k gk
 
-    " The following two lines conflict with moving to top and bottom of the
-    " screen
-    " If you prefer that functionality, comment them out.
-    map <S-H> gT
-    map <S-L> gt
-
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
 
@@ -168,8 +204,8 @@
     cmap cd. lcd %:p:h
 
     " visual shifting (does not exit Visual mode)
-    vnoremap < <gv
-    vnoremap > >gv 
+	vnoremap < <gv
+	vnoremap > >gv 
 
     " Fix home and end keybindings for screen, particularly on mac
     " - for some reason this fixes the arrow keys too. huh.
@@ -184,23 +220,27 @@
     " Some helpers to edit mode
     " http://vimcasts.org/e/14
     cnoremap %% <C-R>=expand('%:h').'/'<cr>
-    map <leader>ew :e %%
-    map <leader>es :sp %%
-    map <leader>ev :vsp %%
-    map <leader>et :tabe %%
+    map <leader>ew :edit %%
+    map <leader>es :split %%
+    map <leader>ev :vsplit %%
+    map <leader>et :tabedit %%
 
     " Adjust viewports to the same size
     map <Leader>= <C-w>=
 " }
 
 " Plugins {
+	" BufExplorer {
+		let g:bufExplorerFindActive=0
+	" }
+
 	" NerdTree {
 		map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 		map <leader>e :NERDTreeFind<CR>
 		nmap <leader>nt :NERDTreeFind<CR>
 
 		let NERDTreeShowBookmarks=1
-		let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+		let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.DS_Store']
 		let NERDTreeChDirMode=0
 		let NERDTreeQuitOnOpen=1
 		let NERDTreeShowHidden=1
@@ -264,10 +304,11 @@
     " GVIM- (here instead of .gvimrc)
     if has('gui_running')
         "set guioptions-=T           " remove the toolbar
-        set lines=40                " 40 lines of text instead of 24,
+        set lines=60                " 50 lines of text instead of 24,
+		set columns=200
         "set guifont=Andale\ Mono\ Regular:h16,Menlo\ Regular:h15,Consolas\ Regular:h16,Courier\ New\ Regular:h18
         if has('gui_macvim')
-            set transparency=5          " Make the window slightly transparent
+		"	set transparency=5          " Make the window slightly transparent
         endif
     else
         "set term=builtin_ansi       " Make arrow and other keys work
@@ -282,8 +323,8 @@ function! InitializeDirectories()
     let prefix = '.vim'
     let dir_list = {
                 \ 'backup': 'backupdir',
-                \ 'views': 'viewdir',
-                \ 'swap': 'directory' }
+                \ 'swap': 'directory',
+                \ 'views': 'viewdir'}
 
     if has('persistent_undo')
         let dir_list['undo'] = 'undodir'
