@@ -48,6 +48,7 @@
 	Bundle 'scrooloose/syntastic'
 	Bundle 'majutsushi/tagbar'
 	Bundle 'Shougo/neocomplcache'
+	Bundle 'matchit.zip'
 
 	" HTML
 	Bundle 'othree/html5.vim'
@@ -60,6 +61,7 @@
 
 	" Ruby
 	Bundle 'vim-ruby/vim-ruby'
+	Bundle 'ruby-matchit'
 
 " }
 
