@@ -31,7 +31,7 @@
 	Bundle 'molokai'
 	Bundle 'jellybeans.vim'
 	Bundle 'twerth/ir_black'
-	Bundle 'tomorrow'
+	Bundle 'chriskempson/vim-tomorrow-theme'
 	Bundle 'earendel'
 
 	" General
@@ -310,9 +310,9 @@
 " GUI Settings {
     " GVIM- (here instead of .gvimrc)
     if has('gui_running')
-		colorscheme wombat
 		"colorscheme ir_dark
-		"colorscheme Tomorrow-Night-Eighties
+		"colorscheme wombat
+		colorscheme Tomorrow-Night-Eighties
 
         "set guioptions-=T           " remove the toolbar
         set lines=60                " 50 lines of text instead of 24,
