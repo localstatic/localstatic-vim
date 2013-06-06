@@ -22,7 +22,7 @@
 " }
 
 " Bundles {
-	
+
 	Bundle 'gmarik/vundle'
 
 	" Color schemes
@@ -54,7 +54,7 @@
 	Bundle 'othree/html5.vim'
 
 	" PHP
-    Bundle 'spf13/PIV'
+	Bundle 'spf13/PIV'
 
 	" HAML/Sass/SCSS - I mostly care about Sass/SCSS
 	Bundle 'tpope/vim-haml'
@@ -165,8 +165,10 @@
     set scrolloff=3                 " minimum lines to keep above and below cursor
     set foldenable                  " auto fold code
     "set list
-    "set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
-
+	set nolist                      " Don't show list characters (tab, EOL, etc as set in listchars)
+    set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+	set splitright                  " New splits to the right
+	set splitbelow                  " New splits below
 " }
 
 " Formatting {
@@ -183,6 +185,8 @@
     " Remove trailing whitespaces and ^M chars
 	"autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 	autocmd FileType python set noexpandtab
+	autocmd FileType ruby,eruby setlocal shiftwidth=2 tabstop=2 sts=2 expandtab
+	"au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 " }
 
 " Key (re)Mappings {
@@ -247,6 +251,7 @@
 		let NERDTreeQuitOnOpen=1
 		let NERDTreeShowHidden=1
 		let NERDTreeKeepTreeInNewTab=1
+		let NERDTreeWinSize=50
 	" }
 
 	" Fugitive {
@@ -305,6 +310,10 @@
 " GUI Settings {
     " GVIM- (here instead of .gvimrc)
     if has('gui_running')
+		colorscheme wombat
+		"colorscheme ir_dark
+		"colorscheme Tomorrow-Night-Eighties
+
         "set guioptions-=T           " remove the toolbar
         set lines=60                " 50 lines of text instead of 24,
 		set columns=200
@@ -313,6 +322,7 @@
 		"	set transparency=5          " Make the window slightly transparent
         endif
     else
+		colorscheme default
         "set term=builtin_ansi       " Make arrow and other keys work
     endif
 " }
