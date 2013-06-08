@@ -33,6 +33,9 @@
 	Bundle 'twerth/ir_black'
 	Bundle 'chriskempson/vim-tomorrow-theme'
 	Bundle 'earendel'
+	Bundle 'sjl/badwolf'
+	Bundle 'morhetz/gruvbox'
+	Bundle 'kellys'
 
 	" General
 	Bundle 'scrooloose/nerdtree'
@@ -312,7 +315,9 @@
     if has('gui_running')
 		"colorscheme ir_dark
 		"colorscheme wombat
-		colorscheme Tomorrow-Night-Eighties
+		"colorscheme Tomorrow-Night-Eighties
+		"colorscheme badwolf
+		colorscheme kellys
 
         "set guioptions-=T           " remove the toolbar
         set lines=60                " 50 lines of text instead of 24,
