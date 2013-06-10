@@ -69,7 +69,6 @@ Bundle 'ruby-matchit'
 " }
 
 " General {
-set background=dark         " Assume a dark background
 filetype plugin indent on   " Automatically detect file types.
 syntax on                   " syntax highlighting
 set mouse=a                 " automatically enable mouse usage
@@ -98,6 +97,7 @@ au BufWinEnter *.* silent! loadview "make vim load view (state) (folds, cursor, 
 " }
 
 " Vim UI {
+set background=dark         " Assume a dark background
 color desert
 set showmode                    " display the current mode
 
