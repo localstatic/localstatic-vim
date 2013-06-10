@@ -188,7 +188,7 @@
     " Remove trailing whitespaces and ^M chars
 	"autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 	autocmd FileType python set noexpandtab
-	autocmd FileType ruby,eruby setlocal shiftwidth=2 tabstop=2 sts=2 expandtab
+	autocmd FileType ruby,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 	"au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 " }
 
