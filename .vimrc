@@ -314,10 +314,10 @@ nnoremap <silent> <leader>tt :TagbarToggle<CR>
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
 	"colorscheme ir_dark
-	"colorscheme wombat
+	colorscheme wombat
 	"colorscheme Tomorrow-Night-Eighties
 	"colorscheme badwolf
-	colorscheme kellys
+	"colorscheme kellys
 
 	"set guioptions-=T           " remove the toolbar
 	set lines=60                " 50 lines of text instead of 24,
