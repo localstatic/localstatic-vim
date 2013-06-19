@@ -143,8 +143,7 @@ if has('statusline')
 	"set statusline+=\ %P    "percent through file
 
 	" My custom statusline
-	set statusline=                          " empty line to facilitate
-	" easy moving around of segments
+	set statusline=                          " empty line to facilitate easy moving around of segments
 	set statusline+=\ [%{getcwd()}]          " Current directory
 	set statusline+=\ %t
 	set statusline+=%w%h%m%r                 " Options
