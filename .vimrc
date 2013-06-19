@@ -55,6 +55,7 @@ Bundle 'matchit.zip'
 
 " HTML
 Bundle 'othree/html5.vim'
+Bundle 'vim-scripts/HTML-AutoCloseTag'
 
 " PHP
 Bundle 'spf13/PIV'
