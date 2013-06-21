@@ -328,7 +328,7 @@ if has('gui_running')
 	endif
 else
 	colorscheme default
-	"set term=builtin_ansi       " Make arrow and other keys work
+	set term=builtin_ansi       " Make arrow and other keys work
 endif
 " }
 
