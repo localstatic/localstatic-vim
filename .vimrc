@@ -1,6 +1,6 @@
 
 " Modeline and Notes {
-" vim: set foldmarker={,} foldlevel=0 foldmethod=marker spell:
+" vim: set foldmarker={,} foldlevel=0 foldmethod=marker:
 " }
 
 " Environment {
@@ -79,7 +79,6 @@ set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
 set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 set virtualedit=onemore         " allow for cursor beyond last character
 set history=1000                " Store a ton of history (default is 20)
-set spell                       " spell checking on
 set hidden                      " allow buffer switching without saving
 
 set nobackup " Don't create annoying backup files
