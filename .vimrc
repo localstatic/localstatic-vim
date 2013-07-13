@@ -42,8 +42,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
-Bundle 'AutoClose'
 Bundle 'bufexplorer.zip'
+Bundle 'delimitMate.vim'
 
 " Development
 Bundle 'tpope/vim-fugitive'
