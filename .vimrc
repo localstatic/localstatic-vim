@@ -53,6 +53,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'Shougo/neocomplcache'
 Bundle 'matchit.zip'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'SirVer/ultisnips'
 
 " HTML
 Bundle 'othree/html5.vim'
