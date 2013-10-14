@@ -44,6 +44,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'bufexplorer.zip'
 Bundle 'delimitMate.vim'
+Bundle 'roman/golden-ratio'
 
 " Development
 Bundle 'tpope/vim-fugitive'
@@ -236,8 +237,9 @@ map <leader>es :split %%
 map <leader>ev :vsplit %%
 map <leader>et :tabedit %%
 
-" Adjust viewports to the same size
+" Adjust viewports
 map <Leader>= <C-w>=
+map <Leader>gr :GoldenRatioResize<CR>
 " }
 
 " Plugins {
