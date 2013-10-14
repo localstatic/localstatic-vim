@@ -242,6 +242,14 @@ map <leader>et :tabedit %%
 " Adjust viewports
 map <Leader>= <C-w>=
 map <Leader>gr :GoldenRatioResize<CR>
+
+" Format XML files
+map <Leader>xml :silent 1,$!xmllint --format --recover - 2>/dev/null
+
+" Insert current timestamp (http://vim.wikia.com/wiki/Insert_current_date_or_time)
+:nnoremap <F5> "=strftime("%c")<CR>P
+:inoremap <F5> <C-R>=strftime("%c")<CR>
+
 " }
 
 " Plugins {
