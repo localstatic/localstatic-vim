@@ -53,12 +53,13 @@ Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'Shougo/neocomplcache'
 Bundle 'matchit.zip'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 
 " HTML
 Bundle 'othree/html5.vim'
 Bundle 'vim-scripts/HTML-AutoCloseTag'
+Bundle 'tpope/vim-ragtag'
 
 " PHP
 Bundle 'spf13/PIV'
@@ -68,6 +69,7 @@ Bundle 'tpope/vim-haml'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
 Bundle 'ruby-matchit'
 
 " }
