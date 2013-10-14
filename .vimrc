@@ -328,8 +328,8 @@ nnoremap <silent> <leader>tt :TagbarToggle<CR>
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
 	"colorscheme ir_dark
-	colorscheme wombat
-	"colorscheme Tomorrow-Night-Eighties
+	"colorscheme wombat
+	colorscheme Tomorrow-Night-Eighties
 	"colorscheme badwolf
 	"colorscheme kellys
 
