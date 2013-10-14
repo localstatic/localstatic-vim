@@ -146,7 +146,8 @@ if has('statusline')
 	" My custom statusline
 	set statusline=                          " empty line to facilitate easy moving around of segments
 	set statusline+=\ [%{getcwd()}]          " Current directory
-	set statusline+=\ %t
+	"set statusline+=\ %t
+	set statusline+=\ %<%f\ 
 	set statusline+=%w%h%m%r                 " Options
 	set statusline+=\ [%{&ff}/%Y]            " Filetype
 	set statusline+=%=                       " split between left- and right-aligned info"
