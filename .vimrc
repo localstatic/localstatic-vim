@@ -195,6 +195,11 @@ set pastetoggle=<F12>            " pastetoggle (sane indentation on pastes)
 autocmd FileType python set noexpandtab
 autocmd FileType ruby,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+
+augroup filetypedetect
+    "autocmd BufNew,BufNewFile,BufRead *.txt,*.text,*.md,*.markdown :setfiletype markdown
+    autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
+augroup END
 " }
 
 " Key (re)Mappings {
