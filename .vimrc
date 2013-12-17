@@ -45,6 +45,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'bufexplorer.zip'
 Bundle 'delimitMate.vim'
 Bundle 'roman/golden-ratio'
+Bundle 'ack.vim'
 
 " Development
 Bundle 'tpope/vim-fugitive'
@@ -258,6 +259,11 @@ map <Leader>xml :silent 1,$!xmllint --format --recover - 2>/dev/null
 " }
 
 " Plugins {
+
+" Ack.vim {
+let g:ackprg="ag"
+" }
+
 " BufExplorer {
 let g:bufExplorerFindActive=0
 " }
