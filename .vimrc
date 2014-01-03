@@ -200,6 +200,7 @@ autocmd FileType ruby,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expand
 augroup filetypedetect
     "autocmd BufNew,BufNewFile,BufRead *.txt,*.text,*.md,*.markdown :setfiletype markdown
     autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
+	autocmd BufNew,BufNewFile,BufRead *.module :set filetype=php " Drupal module
 augroup END
 " }
 
