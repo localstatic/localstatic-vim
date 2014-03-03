@@ -249,6 +249,11 @@ map <Leader>xml :silent 1,$!xmllint --format --recover - 2>/dev/null
 :nnoremap <F5> "=strftime("%c")<CR>P
 :inoremap <F5> <C-R>=strftime("%c")<CR>
 
+" Fix syntax highlighting
+:map <Leader>fixsyn :syntax sync fromstart<CR>
+:nnoremap <F6> :syntax sync fromstart<CR>
+:inoremap <F6> :syntax sync fromstart<CR>
+
 " }
 
 " Plugins {
