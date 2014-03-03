@@ -26,15 +26,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Color schemes
-Bundle 'Wombat'
-Bundle 'Solarized'
-Bundle 'molokai'
-Bundle 'jellybeans.vim'
-Bundle 'twerth/ir_black'
 Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'earendel'
 Bundle 'sjl/badwolf'
-Bundle 'morhetz/gruvbox'
 Bundle 'kellys'
 
 " General
@@ -54,7 +47,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'Shougo/neocomplcache'
 Bundle 'matchit.zip'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 
 " HTML
