@@ -112,39 +112,11 @@ if has('statusline')
 	set laststatus=2
 
 	" Broken down into easily includable segments
-
-	"set statusline=                          " empty line to facilitate
-	"" easy moving around of segments
-	""set statusline+=\ %<%f\                  " Filename
-	"set statusline+=%t
-	"set statusline+=%w%h%m%r                 " Options
-	""set statusline+=%{fugitive#statusline()} " Git Info
-	""set statusline+=\ [%{getcwd()}]          " Current directory
-	"set statusline+=\ [%{&ff}/%Y]            " Filetype
-	"set statusline+=%=                       " split between left- and right-aligned info"
-	"set statusline+=%-14.(%l,%c%V%)\ %p%%    " file nav info
-
-
-	"set statusline=                          " empty line to facilitate
-	"" easy moving around of segments
-	"set statusline=%t       "tail of the filename
-	"set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-	"set statusline+=%{&ff}] "file format
-	"set statusline+=%h      "help file flag
-	"set statusline+=%m      "modified flag
-	"set statusline+=%r      "read only flag
-	"set statusline+=%y      "filetype
-	"set statusline+=%=      "left/right separator
-	"set statusline+=%c,     "cursor column
-	"set statusline+=%l/%L   "cursor line/total lines
-	"set statusline+=\ %P    "percent through file
-
-	" My custom statusline
 	set statusline=                          " empty line to facilitate easy moving around of segments
-	set statusline+=\ [%{getcwd()}]          " Current directory
-	"set statusline+=\ %t
+	"set statusline+=\ [%{getcwd()}]          " Current directory
+	set statusline+=%W%H%M%R                  " Options
 	set statusline+=\ %<%f\ 
-	set statusline+=%w%h%m%r                 " Options
+	set statusline+=%{fugitive#statusline()} " Git Info
 	set statusline+=\ [%{&ff}/%Y]            " Filetype
 	set statusline+=%=                       " split between left- and right-aligned info"
 	set statusline+=%-8.(%l,%c%V%)\ %p%%    " file nav info
