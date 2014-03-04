@@ -310,8 +310,8 @@ nnoremap <silent> <leader>tt :TagbarToggle<CR>
 if has('gui_running')
 	"colorscheme ir_dark
 	"colorscheme wombat
-	colorscheme Tomorrow-Night-Eighties
-	"colorscheme badwolf
+	"colorscheme Tomorrow-Night-Eighties
+	colorscheme badwolf
 	"colorscheme kellys
 
 	"set guioptions-=T           " remove the toolbar
