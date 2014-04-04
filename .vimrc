@@ -29,6 +29,8 @@ Bundle 'gmarik/vundle'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'sjl/badwolf'
 Bundle 'kellys'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'vim-scripts/Wombat'
 
 " General
 Bundle 'scrooloose/nerdtree'
@@ -311,8 +313,10 @@ if has('gui_running')
 	"colorscheme ir_dark
 	"colorscheme wombat
 	"colorscheme Tomorrow-Night-Eighties
-	colorscheme badwolf
+	"colorscheme Tomorrow-Night
+	"colorscheme badwolf
 	"colorscheme kellys
+	colorscheme jellybeans
 
 	"set guioptions-=T           " remove the toolbar
 	set lines=60                " 50 lines of text instead of 24,
