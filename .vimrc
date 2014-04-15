@@ -169,6 +169,8 @@ augroup filetypedetect
     autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 	autocmd BufNew,BufNewFile,BufRead *.module :set filetype=php " Drupal module
 augroup END
+
+let g:PHP_vintage_case_default_indent = 1
 " }
 
 " Key (re)Mappings {
