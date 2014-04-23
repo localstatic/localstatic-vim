@@ -42,6 +42,7 @@ Bundle 'bufexplorer.zip'
 Bundle 'delimitMate.vim'
 Bundle 'roman/golden-ratio'
 Bundle 'ack.vim'
+Bundle 'bling/vim-airline'
 
 " Development
 Bundle 'tpope/vim-fugitive'
