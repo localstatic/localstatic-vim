@@ -322,8 +322,8 @@ if has('gui_running')
 	"colorscheme Tomorrow-Night
 	"colorscheme badwolf
 	"colorscheme kellys
-	"colorscheme jellybeans
-	colorscheme base16-tomorrow
+	colorscheme jellybeans
+	"colorscheme base16-tomorrow
 
 	"set guioptions-=T           " remove the toolbar
 	set lines=60                " 50 lines of text instead of 24,
