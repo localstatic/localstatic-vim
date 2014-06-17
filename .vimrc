@@ -32,6 +32,7 @@ Bundle 'kellys'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'vim-scripts/Wombat'
 Bundle 'chriskempson/base16-vim'
+Bundle 'tomasr/molokai'
 
 " General
 Bundle 'scrooloose/nerdtree'
