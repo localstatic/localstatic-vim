@@ -53,7 +53,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'Shougo/neocomplcache'
 Bundle 'matchit.zip'
-Bundle 'SirVer/ultisnips'
+"Bundle 'SirVer/ultisnips'
 
 " HTML
 Bundle 'othree/html5.vim'
