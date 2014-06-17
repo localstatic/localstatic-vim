@@ -43,6 +43,7 @@ Bundle 'delimitMate.vim'
 Bundle 'roman/golden-ratio'
 Bundle 'ack.vim'
 Bundle 'bling/vim-airline'
+Bundle 'rizzatti/dash.vim'
 
 " Development
 Bundle 'tpope/vim-fugitive'
