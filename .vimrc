@@ -226,6 +226,9 @@ map <Leader>gr :GoldenRatioResize<CR>
 " Format XML files
 map <Leader>xml :silent 1,$!xmllint --format --recover - 2>/dev/null
 
+" Format JSON files
+nmap <leader>json :%!jsonlint<CR>
+
 " Convert Markdown to HTML
 nmap <leader>md :%!multimarkdown<CR>
 
