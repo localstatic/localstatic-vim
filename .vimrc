@@ -14,62 +14,68 @@ if has('win32') || has('win64')
 endif
 " }
 
-" Setup Bundle Support {
+" }
+
+" Vundle {
+
+" Setup Vundle Support {
 " The next two lines ensure that the ~/.vim/bundle/ system works
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-" }
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " }
 
-" Bundles {
-
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.git'
 
 " Color schemes
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'sjl/badwolf'
-Bundle 'kellys'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'vim-scripts/Wombat'
-Bundle 'chriskempson/base16-vim'
-Bundle 'tomasr/molokai'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'sjl/badwolf'
+Plugin 'kellys'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'vim-scripts/Wombat'
+Plugin 'chriskempson/base16-vim'
+Plugin 'tomasr/molokai'
 
 " General
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'bufexplorer.zip'
-Bundle 'delimitMate.vim'
-Bundle 'roman/golden-ratio'
-Bundle 'ack.vim'
-Bundle 'bling/vim-airline'
-Bundle 'rizzatti/dash.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'bufexplorer.zip'
+Plugin 'delimitMate.vim'
+Plugin 'roman/golden-ratio'
+Plugin 'ack.vim'
+Plugin 'bling/vim-airline'
+Plugin 'rizzatti/dash.vim'
 
 " Development
-Bundle 'tpope/vim-fugitive'
-Bundle 'vcscommand.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'Shougo/neocomplcache'
-Bundle 'matchit.zip'
-"Bundle 'SirVer/ultisnips'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vcscommand.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'Shougo/neocomplcache'
+Plugin 'matchit.zip'
+"Plugin 'SirVer/ultisnips'
 
 " HTML
-Bundle 'othree/html5.vim'
-Bundle 'vim-scripts/HTML-AutoCloseTag'
-Bundle 'tpope/vim-ragtag'
+Plugin 'othree/html5.vim'
+Plugin 'vim-scripts/HTML-AutoCloseTag'
+Plugin 'tpope/vim-ragtag'
 
 " PHP
-Bundle 'spf13/PIV'
+Plugin 'spf13/PIV'
 
 " HAML/Sass/SCSS - I mostly care about Sass/SCSS
-Bundle 'tpope/vim-haml'
+Plugin 'tpope/vim-haml'
 
 " Ruby
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'ruby-matchit'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'ruby-matchit'
+
+" Finish setting up Vundle support {
+" Must go after "Plugin" lines
+call vundle#end()
+" }
 
 " }
 
