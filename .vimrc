@@ -321,6 +321,7 @@ nmap <Leader>ac <Plug>ToggleAutoCloseMappings
 
 " TagBar {
 nnoremap <silent> <leader>tt :TagbarToggle<CR>
+nnoremap <silent> <leader>to :TagbarOpen jf<CR>
 "}
 " }
 
