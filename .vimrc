@@ -239,13 +239,11 @@ nmap <leader>json :%!jsonlint<CR>
 nmap <leader>md :%!multimarkdown<CR>
 
 " Insert current timestamp (http://vim.wikia.com/wiki/Insert_current_date_or_time)
-:nnoremap <F5> "=strftime("%c")<CR>P
-:inoremap <F5> <C-R>=strftime("%c")<CR>
+:nnoremap <leader>dts "=strftime("%c")<CR>PA
 
 " Fix syntax highlighting
-:map <Leader>fixsyn :syntax sync fromstart<CR>
-:nnoremap <F6> :syntax sync fromstart<CR>
-:inoremap <F6> :syntax sync fromstart<CR>
+:nnoremap <F2> :syntax sync fromstart<CR>
+:inoremap <F2> :syntax sync fromstart<CR>
 
 " }
 
