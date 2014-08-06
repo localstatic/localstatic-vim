@@ -55,6 +55,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Shougo/neocomplcache'
 Plugin 'matchit.zip'
 "Plugin 'SirVer/ultisnips'
+Plugin 'kien/ctrlp.vim'
 
 " HTML
 Plugin 'othree/html5.vim'
@@ -323,6 +324,11 @@ nmap <Leader>ac <Plug>ToggleAutoCloseMappings
 nnoremap <silent> <leader>tt :TagbarToggle<CR>
 nnoremap <silent> <leader>to :TagbarOpen jf<CR>
 "}
+
+" Ctrl-P {
+let g:ctrlp_working_path_mode = 'ra'
+"}
+
 " }
 
 " GUI Settings {
