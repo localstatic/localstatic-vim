@@ -136,7 +136,7 @@ if has('statusline')
 endif
 
 set backspace=indent,eol,start  " backspace for dummies
-set linespace=0                 " No extra spaces between rows
+set linespace=2                 " Extra pixels between rows
 set number                      " Line numbers on
 set showmatch                   " show matching brackets/parenthesis
 set incsearch                   " find as you type search
@@ -329,6 +329,11 @@ nnoremap <silent> <leader>to :TagbarOpen jf<CR>
 let g:ctrlp_working_path_mode = 'ra'
 "}
 
+" Airline {
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#mixed_indent_algo = 1
+" }
+
 " }
 
 " GUI Settings {
@@ -346,7 +351,7 @@ if has('gui_running')
 	"set guioptions-=T           " remove the toolbar
 	set lines=60                " 50 lines of text instead of 24,
 	set columns=200
-	set guifont=Anonymous\ Pro:h14,Menlo\ Regular:h15,Andale\ Mono\ Regular:h16,Consolas\ Regular:h16,Courier\ New\ Regular:h18
+	set guifont=Anonymous\ Pro\ for\ Powerline:h14,Anonymous\ Pro:h14,Menlo\ Regular:h15,Andale\ Mono\ Regular:h16,Consolas\ Regular:h16,Courier\ New\ Regular:h18
 	if has('gui_macvim')
 		"	set transparency=5          " Make the window slightly transparent
 	endif
