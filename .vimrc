@@ -24,7 +24,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " }
 
-Plugin 'gmarik/Vundle.git'
+Plugin 'gmarik/Vundle.vim'
 
 " Color schemes
 Plugin 'chriskempson/vim-tomorrow-theme'
