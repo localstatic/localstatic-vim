@@ -8,7 +8,7 @@ set nocompatible
 
 " Windows Compatible {
 " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-" across (heterogeneous) systems easier. 
+" across (heterogeneous) systems easier.
 if has('win32') || has('win64')
 	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
@@ -126,8 +126,8 @@ if has('statusline')
 	" Broken down into easily includable segments
 	set statusline=                          " empty line to facilitate easy moving around of segments
 	set statusline+=%W%H%M%R                  " Options
-	"set statusline+=\ %<%f\ 
-	set statusline+=\ %<%t\ 
+	"set statusline+=\ %<%f\  "
+	set statusline+=\ %<%t\  "
 	set statusline+=\ [%{getcwd()}]          " Current directory
 	set statusline+=\ %{fugitive#statusline()} " Git Info
 	set statusline+=\ [%{&ff}/%Y]            " Filetype
@@ -164,7 +164,7 @@ set shiftwidth=4                 " use indents of 4 spaces
 set noexpandtab                  " tabs are tabs, damnit!
 set tabstop=4                    " an indentation every four columns
 set softtabstop=4                " let backspace delete indent
-"set matchpairs+=<:>              " match, to be used with % 
+"set matchpairs+=<:>              " match, to be used with %
 set pastetoggle=<F12>            " pastetoggle (sane indentation on pastes)
 "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 " Remove trailing whitespaces and ^M chars
@@ -176,8 +176,8 @@ autocmd FileType ruby,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expand
 "au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 augroup filetypedetect
-    "autocmd BufNew,BufNewFile,BufRead *.txt,*.text,*.md,*.markdown :setfiletype markdown
-    autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
+	"autocmd BufNew,BufNewFile,BufRead *.txt,*.text,*.md,*.markdown :setfiletype markdown
+	autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 	autocmd BufNew,BufNewFile,BufRead *.module :set filetype=php " Drupal module
 augroup END
 
@@ -206,7 +206,7 @@ cmap cd. lcd %:p:h
 
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
-vnoremap > >gv 
+vnoremap > >gv
 
 " Fix home and end keybindings for screen, particularly on mac
 " - for some reason this fixes the arrow keys too. huh.
@@ -414,8 +414,8 @@ endif
 " }
 
 " Use local gvimrc if available and gui is running {
-if has('gui_running') 
-	if filereadable(expand("~/.gvimrc.local")) 
+if has('gui_running')
+	if filereadable(expand("~/.gvimrc.local"))
 		source ~/.gvimrc.local
 	endif
 endif
