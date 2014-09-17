@@ -43,7 +43,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'bufexplorer.zip'
 Plugin 'delimitMate.vim'
 Plugin 'roman/golden-ratio'
-Plugin 'ack.vim'
+Plugin 'rking/ag.vim'
 Plugin 'bling/vim-airline'
 Plugin 'rizzatti/dash.vim'
 
@@ -250,8 +250,7 @@ nmap <leader>md :%!multimarkdown<CR>
 
 " Plugins {
 
-" Ack.vim {
-let g:ackprg="ag"
+" Ag.vim {
 " }
 
 " BufExplorer {
