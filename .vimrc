@@ -56,6 +56,7 @@ Plugin 'Shougo/neocomplcache'
 Plugin 'matchit.zip'
 "Plugin 'SirVer/ultisnips'
 Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-rooter'
 
 " HTML
 Plugin 'othree/html5.vim'
@@ -331,6 +332,11 @@ let g:ctrlp_working_path_mode = 'ra'
 " Airline {
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
+" }
+
+" Rooter {
+let g:rooter_use_lcd = 1 " Use local :lcd instead of :cd
+map <silent> <unique> <Leader>pcd <Plug>RooterChangeToRootDirectory
 " }
 
 " }
