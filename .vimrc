@@ -338,6 +338,7 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 
 " Rooter {
 let g:rooter_use_lcd = 1 " Use local :lcd instead of :cd
+let g:rooter_patterns = ['.git/', '.git', '.hg/', '._darcs/', '.bzr/', '.svn/']
 map <silent> <unique> <Leader>pcd <Plug>RooterChangeToRootDirectory
 " }
 
