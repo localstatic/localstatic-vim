@@ -168,8 +168,14 @@ set softtabstop=4                " let backspace delete indent
 "set matchpairs+=<:>              " match, to be used with %
 set pastetoggle=<F12>            " pastetoggle (sane indentation on pastes)
 "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
+
 " Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+
+let g:PHP_vintage_case_default_indent = 1
+" }
+
+" Filetype-specific settings {
 "autocmd FileType c,cpp,java,php,js,python,twig,xml,yml set formatoptions-=t
 autocmd FileType python set noexpandtab
 autocmd FileType php set noexpandtab
@@ -184,7 +190,6 @@ augroup filetypedetect
 	autocmd BufNew,BufNewFile,BufRead *.sls :set filetype=yaml " Salt state files
 augroup END
 
-let g:PHP_vintage_case_default_indent = 1
 " }
 
 " Key (re)Mappings {
