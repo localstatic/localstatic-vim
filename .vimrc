@@ -180,6 +180,7 @@ augroup filetypedetect
 	"autocmd BufNew,BufNewFile,BufRead *.txt,*.text,*.md,*.markdown :setfiletype markdown
 	autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 	autocmd BufNew,BufNewFile,BufRead *.module :set filetype=php " Drupal module
+	autocmd BufNew,BufNewFile,BufRead *.sls :set filetype=yaml " Salt state files
 augroup END
 
 let g:PHP_vintage_case_default_indent = 1
