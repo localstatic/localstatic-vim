@@ -48,6 +48,7 @@ Plugin 'bling/vim-airline'
 Plugin 'rizzatti/dash.vim'
 
 " Development
+Plugin 'tpop/vim-git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vcscommand.vim'
 Plugin 'scrooloose/syntastic'
