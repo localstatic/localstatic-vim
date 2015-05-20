@@ -58,6 +58,7 @@ Plugin 'matchit.zip'
 "Plugin 'SirVer/ultisnips'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-rooter'
+Plugin 'joonty/vdebug'
 
 " HTML
 Plugin 'othree/html5.vim'
