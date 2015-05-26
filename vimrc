@@ -174,6 +174,9 @@ set pastetoggle=<F12>            " pastetoggle (sane indentation on pastes)
 " Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
+" Keep syntax in sync (hopefully this isn't too slow)
+autocmd BufEnter * :syntax sync fromstart
+
 let g:PHP_vintage_case_default_indent = 1
 " }
 
