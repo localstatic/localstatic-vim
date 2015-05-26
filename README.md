@@ -7,10 +7,12 @@ This was originally based on [spf13/spf13-vim](https://github.com/spf13/spf13-vi
 Installation
 ------------
 
+After installing your vim of choice, the following steps should get you going.
+
 1. Clone this repo to the desired location
-2. Symlink .vimrc & .vim into your home directory (i.e. ~/.vimrc and ~/.vim)
+2. Symlink vimrc & vim into your home directory (i.e. ~/.vimrc and ~/.vim)
 3. `git submodule init`
 4. `git submodule update`
 5. Install plugins
   * `vim +PluginInstall +qall` or run Vim and run `:PlugnInstall`
-
+6. (optional) Install [Powerline version of the "Anonymous Pro"](https://github.com/powerline/fonts/tree/master/AnonymousPro) font
