@@ -253,8 +253,7 @@ nmap <leader>md :%!multimarkdown<CR>
 :nnoremap <leader>dts "=strftime("%c")<CR>PA
 
 " Fix syntax highlighting
-:nnoremap <F2> :syntax sync fromstart<CR>
-:inoremap <F2> :syntax sync fromstart<CR>
+map <leader>syn :syntax sync fromstart<CR>
 
 " }
 
