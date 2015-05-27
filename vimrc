@@ -67,6 +67,7 @@ Plugin 'tpope/vim-ragtag'
 
 " PHP
 Plugin 'spf13/PIV'
+Plugin 'joonty/vim-phpqa'
 
 " HAML/Sass/SCSS - I mostly care about Sass/SCSS
 Plugin 'tpope/vim-haml'
@@ -373,7 +374,7 @@ if has('gui_running')
 		"	set transparency=5          " Make the window slightly transparent
 	endif
 else
-	colorscheme default
+	colorscheme wombat
 	set term=builtin_ansi       " Make arrow and other keys work
 endif
 " }
