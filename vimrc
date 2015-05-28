@@ -352,6 +352,8 @@ let g:rooter_patterns = ['.git/', '.git', '.hg/', '._darcs/', '.bzr/', '.svn/']
 map <silent> <unique> <Leader>pcd <Plug>RooterChangeToRootDirectory
 " }
 
+" PHPQA {
+let g:phpqa_messdetector_autorun = 0
 " }
 
 " GUI Settings {
