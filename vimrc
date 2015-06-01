@@ -356,6 +356,15 @@ map <silent> <unique> <Leader>pcd <Plug>RooterChangeToRootDirectory
 let g:phpqa_messdetector_autorun = 0
 " }
 
+" Vdebug {
+if !exists('g:vdebug_options')
+  let g:vdebug_options = {}
+endif
+let g:vdebug_options['path_maps'] = { '/src': $HOME . '/Sites' }
+" }
+
+" }
+
 " GUI Settings {
 " GVIM- (here instead of .gvimrc)
 if has('gui_running')
