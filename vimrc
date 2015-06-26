@@ -46,6 +46,7 @@ Plugin 'roman/golden-ratio'
 Plugin 'rking/ag.vim'
 Plugin 'bling/vim-airline'
 Plugin 'rizzatti/dash.vim'
+Plugin 'yssl/QFEnter'
 
 " Development
 Plugin 'tpope/vim-git'
