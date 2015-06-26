@@ -372,12 +372,12 @@ let g:vdebug_options['path_maps'] = { '/src': $HOME . '/Sites' }
 if has('gui_running')
 	"colorscheme ir_dark
 	"colorscheme wombat
-	colorscheme Tomorrow-Night-Eighties
+	"colorscheme Tomorrow-Night-Eighties
 	"colorscheme Tomorrow-Night
 	"colorscheme badwolf
 	"colorscheme kellys
 	"colorscheme jellybeans
-	"colorscheme base16-tomorrow
+	colorscheme base16-tomorrow
 
 	"set guioptions-=T           " remove the toolbar
 	set lines=60                " 50 lines of text instead of 24,
