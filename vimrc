@@ -204,6 +204,8 @@ augroup END
 "location
 let mapleader = ','
 
+map <leader>s :w<CR>
+
 " Wrapped lines goes down/up to next row, rather than next line in file.
 nnoremap j gj
 nnoremap k gk
