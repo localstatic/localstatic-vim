@@ -67,6 +67,7 @@ Plugin 'tpope/vim-ragtag'
 
 " PHP
 Plugin 'spf13/PIV'
+Plugin 'joonty/vim-phpqa'
 
 " HAML/Sass/SCSS - I mostly care about Sass/SCSS
 Plugin 'tpope/vim-haml'
