@@ -357,6 +357,7 @@ map <silent> <unique> <Leader>pcd <Plug>RooterChangeToRootDirectory
 
 " PHPQA {
 let g:phpqa_messdetector_autorun = 0
+let g:phpqa_open_loc = 0 " Don't open location list by default
 " }
 
 " Vdebug {
