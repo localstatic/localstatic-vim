@@ -141,7 +141,7 @@ if has('statusline')
 endif
 
 set backspace=indent,eol,start  " backspace for dummies
-set linespace=2                 " Extra pixels between rows
+"set linespace=2                 " Extra pixels between rows
 set number                      " Line numbers on
 set showmatch                   " show matching brackets/parenthesis
 set incsearch                   " find as you type search
