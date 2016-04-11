@@ -78,6 +78,9 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'ruby-matchit'
 
+" API Blueprint (Apiary)
+Plugin 'kylef/apiblueprint.vim'
+
 " Finish setting up Vundle support {
 " Must go after "Plugin" lines
 call vundle#end()
