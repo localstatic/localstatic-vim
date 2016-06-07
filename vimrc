@@ -103,6 +103,10 @@ set hidden                      " allow buffer switching without saving
 set nobackup " Don't create annoying backup files
 set noswapfile " Swap files? Meh.
 
+"if has('syntax')
+	"set spelllang=en_us " Set spelling language
+"endif
+
 " Setting up the directories {
 if has('persistent_undo')
 	set undofile                " so is persistent undo ...
