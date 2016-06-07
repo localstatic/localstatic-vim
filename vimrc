@@ -292,7 +292,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.DS_Store']
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden=0
 let NERDTreeKeepTreeInNewTab=1
 let NERDTreeWinSize=50
 " }
