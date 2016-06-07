@@ -248,6 +248,7 @@ map <leader>ev :vsplit %%
 map <leader>et :tabedit %%
 
 " Adjust viewports
+map <Leader>_ <C-w>_
 map <Leader>= <C-w>=
 map <Leader>gr :GoldenRatioResize<CR>
 
@@ -271,6 +272,7 @@ map <leader>syn :syntax sync fromstart<CR>
 " Plugins {
 
 " Ag.vim {
+map <leader>ag :Ag!<CR>
 " }
 
 " BufExplorer {
