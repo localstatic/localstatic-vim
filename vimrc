@@ -392,8 +392,8 @@ if has('gui_running')
 	colorscheme base16-tomorrow
 
 	"set guioptions-=T           " remove the toolbar
-	set lines=60                " 50 lines of text instead of 24,
-	set columns=200
+	set lines=60                " Set a more appropriate number of lines
+	set columns=200             " Set a more appropriate number of columns
 	set guifont=Hack:h15,Anonymous\ Pro\ for\ Powerline:h14,Anonymous\ Pro:h14,Menlo\ Regular:h15,Andale\ Mono\ Regular:h16,Consolas\ Regular:h16,Courier\ New\ Regular:h18
 	if has('gui_macvim')
 		"	set transparency=5          " Make the window slightly transparent
