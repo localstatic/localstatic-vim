@@ -164,8 +164,7 @@ set scrolljump=5                " lines to scroll when cursor leaves screen
 set scrolloff=3                 " minimum lines to keep above and below cursor
 set foldenable                  " auto fold code
 set list                        " Show list characters (tab, EOL, etc as set in listchars)
-"set nolist                     " Don't show list characters (tab, EOL, etc as set in listchars)
-set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=tab:,.,trail:.,extends:#,precedes:#,nbsp:. " Show potentially-problematic whitespace
 set splitright                  " New splits to the right
 set splitbelow                  " New splits below
 " }
