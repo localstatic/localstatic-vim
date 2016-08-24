@@ -82,6 +82,9 @@ Plugin 'ruby-matchit'
 " API Blueprint (Apiary)
 Plugin 'kylef/apiblueprint.vim'
 
+" Other
+Plugin 'elzr/vim-json'
+
 " Finish setting up Vundle support {
 " Must go after "Plugin" lines
 call vundle#end()
