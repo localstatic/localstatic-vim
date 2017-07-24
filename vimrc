@@ -386,6 +386,10 @@ let g:vdebug_options['path_maps'] = { '/src': $HOME . '/Sites' }
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 " }
+
+" vim-json {
+let g:vim_json_syntax_conceal = 0
+" }
 " }
 
 " GUI Settings {
