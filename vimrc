@@ -383,6 +383,7 @@ let g:vdebug_options['path_maps'] = { '/src': $HOME . '/Sites' }
 " }
 
 " Syntastic {
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 " }
 " }
