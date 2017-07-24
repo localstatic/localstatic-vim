@@ -98,7 +98,7 @@ syntax on                   " syntax highlighting
 set mouse=a                 " automatically enable mouse usage
 scriptencoding utf-8
 
-set shortmess+=filmnrxoOtTF      " abbrev. of messages (avoids 'hit enter')
+set shortmess+=filmnrxoOtT "F      " abbrev. of messages (avoids 'hit enter')
 set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 set virtualedit=onemore         " allow for cursor beyond last character
 set history=1000                " Store a ton of history (default is 20)
