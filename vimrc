@@ -84,6 +84,7 @@ Plugin 'kylef/apiblueprint.vim'
 
 " Other
 Plugin 'elzr/vim-json'
+Plugin 'leafgarland/typescript-vim'
 
 " Finish setting up Vundle support {
 " Must go after "Plugin" lines
@@ -184,7 +185,7 @@ set pastetoggle=<F12>            " pastetoggle (sane indentation on pastes)
 "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 
 " Remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType c,cpp,java,php,js,ts,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " Keep syntax in sync (hopefully this isn't too slow)
 autocmd BufEnter * :syntax sync fromstart
@@ -193,12 +194,13 @@ let g:PHP_vintage_case_default_indent = 1
 " }
 
 " Filetype-specific settings {
-"autocmd FileType c,cpp,java,php,js,python,twig,xml,yml set formatoptions-=t
+"autocmd FileType c,cpp,java,php,js,ts,python,twig,xml,yml set formatoptions-=t
 autocmd FileType python setlocal noexpandtab
 autocmd FileType php setlocal expandtab
 autocmd FileType ruby,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType js,ts setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 augroup filetypedetect
@@ -380,6 +382,9 @@ endif
 let g:vdebug_options['path_maps'] = { '/src': $HOME . '/Sites' }
 " }
 
+" Syntastic {
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+" }
 " }
 
 " GUI Settings {
