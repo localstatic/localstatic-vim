@@ -198,6 +198,7 @@ autocmd FileType ruby,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expand
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 autocmd FileType javascript,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType html,xhtml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 augroup filetypedetect
