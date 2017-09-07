@@ -205,6 +205,7 @@ augroup filetypedetect
 	autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 	autocmd BufNew,BufNewFile,BufRead *.module :set filetype=php " Drupal module
 	autocmd BufNew,BufNewFile,BufRead *.sls :set filetype=yaml " Salt state files
+	autocmd BufNew,BufNewFile,BufRead *.ts :set filetype=typescript
 augroup END
 
 " }
