@@ -212,8 +212,6 @@ augroup END
 
 " Key (re)Mappings {
 
-"The default leader is '\', but many people prefer ',' as it's in a standard
-"location
 let mapleader = ','
 
 map <leader>s :w<CR>
