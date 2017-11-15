@@ -193,24 +193,13 @@ map <Leader>trail :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$"
 
 " GUI Settings {
 if has('gui_running')
-	"colorscheme ir_dark
-	"colorscheme wombat
-	"colorscheme Tomorrow-Night-Eighties
-	colorscheme Tomorrow-Night
-	"colorscheme badwolf
-	"colorscheme kellys
-	"colorscheme jellybeans
-	"colorscheme base16-tomorrow
+  colorscheme Tomorrow-Night
 
-	"set guioptions-=T           " remove the toolbar
-	set lines=60                " Set a more appropriate number of lines
-	set columns=200             " Set a more appropriate number of columns
-	set guifont=Hack:h15,Anonymous\ Pro\ for\ Powerline:h14,Anonymous\ Pro:h14,Menlo\ Regular:h15,Andale\ Mono\ Regular:h16,Consolas\ Regular:h16,Courier\ New\ Regular:h18
-	if has('gui_macvim')
-		"	set transparency=5          " Make the window slightly transparent
-	endif
+  set lines=60
+  set columns=200
+  set guifont=Hack:h15,Anonymous\ Pro\ for\ Powerline:h14,Anonymous\ Pro:h14,Menlo\ Regular:h15,Andale\ Mono\ Regular:h16,Consolas\ Regular:h16,Courier\ New\ Regular:h18
 else
-	colorscheme default
+  colorscheme default
 endif
 " }
 
