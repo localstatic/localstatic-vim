@@ -16,83 +16,6 @@ endif
 
 " }
 
-" Vundle {
-
-" Setup Vundle Support {
-" The next two lines ensure that the ~/.vim/bundle/ system works
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" }
-
-Plugin 'gmarik/Vundle.vim'
-
-" Color schemes
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'sjl/badwolf'
-Plugin 'kellys'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'vim-scripts/Wombat'
-Plugin 'chriskempson/base16-vim'
-Plugin 'tomasr/molokai'
-
-" General
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'bufexplorer.zip'
-Plugin 'delimitMate.vim'
-Plugin 'roman/golden-ratio'
-Plugin 'rking/ag.vim'
-Plugin 'bling/vim-airline'
-Plugin 'rizzatti/dash.vim'
-Plugin 'yssl/QFEnter'
-
-" Development
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vcscommand.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'majutsushi/tagbar'
-Plugin 'Shougo/neocomplcache'
-Plugin 'matchit.zip'
-"Plugin 'SirVer/ultisnips'
-Plugin 'kien/ctrlp.vim'
-Plugin 'airblade/vim-rooter'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'joonty/vdebug'
-
-" HTML
-Plugin 'othree/html5.vim'
-Plugin 'vim-scripts/HTML-AutoCloseTag'
-Plugin 'tpope/vim-ragtag'
-
-" PHP
-Plugin 'spf13/PIV'
-Plugin 'joonty/vim-phpqa'
-
-" HAML/Sass/SCSS - I mostly care about Sass/SCSS
-Plugin 'tpope/vim-haml'
-
-" Ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'ruby-matchit'
-
-" API Blueprint (Apiary)
-Plugin 'kylef/apiblueprint.vim'
-
-" Other
-Plugin 'elzr/vim-json'
-Plugin 'leafgarland/typescript-vim'
-
-" Finish setting up Vundle support {
-" Must go after "Plugin" lines
-call vundle#end()
-" }
-
-" }
-
 " General {
 filetype plugin indent on   " Automatically detect file types.
 syntax on                   " syntax highlighting
@@ -255,7 +178,7 @@ map <leader>et :tabedit %%
 " Adjust viewports
 map <Leader>_ <C-w>_
 map <Leader>= <C-w>=
-map <Leader>gr :GoldenRatioResize<CR>
+"map <Leader>gr :GoldenRatioResize<CR>
 
 " Format XML files
 map <Leader>xml :silent 1,$!xmllint --format --recover - 2>/dev/null
@@ -275,123 +198,6 @@ map <leader>syn :syntax sync fromstart<CR>
 " Trim trailing whitespace
 map <Leader>trail :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))<CR>
 
-" }
-
-" Plugins {
-
-" Ag.vim {
-map <leader>ag :Ag!<CR>
-" }
-
-" BufExplorer {
-let g:bufExplorerFindActive=0
-" }
-
-" NerdTree {
-map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-map <leader>e :NERDTreeFind<CR>
-nmap <leader>nt :NERDTreeFind<CR>
-
-let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.DS_Store']
-let NERDTreeChDirMode=0
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=0
-let NERDTreeKeepTreeInNewTab=1
-let NERDTreeWinSize=50
-" }
-
-" Fugitive {
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>gp :Git push<CR>
-" }
-
-" OmniComplete {
-if has("autocmd") && exists("+omnifunc")
-	autocmd Filetype *
-				\if &omnifunc == "" |
-				\setlocal omnifunc=syntaxcomplete#Complete |
-				\endif
-endif
-
-hi Pmenu  guifg=#000000 guibg=#F8F8F8 ctermfg=black ctermbg=Lightgray
-hi PmenuSbar  guifg=#8A95A7 guibg=#F8F8F8 gui=NONE ctermfg=darkcyan ctermbg=lightgray cterm=NONE
-hi PmenuThumb  guifg=#F8F8F8 guibg=#8A95A7 gui=NONE ctermfg=lightgray ctermbg=darkcyan cterm=NONE
-
-" some convenient mappings
-inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-inoremap <expr> <C-d>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
-inoremap <expr> <C-u>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
-
-" automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menu,preview,longest
-" }
-
-" Ctags {
-set tags=./tags;/,~/.vimtags
-" }
-
-" EasyTags {
-let g:easytags_cmd = 'ctags'
-" }
-
-" AutoCloseTag {
-" Make it so AutoCloseTag works for xml and xhtml files as well
-au FileType xhtml,xml ru ftplugin/html_autoclosetag.vim
-nmap <Leader>ac <Plug>ToggleAutoCloseMappings
-" }
-
-" TagBar {
-nnoremap <silent> <leader>tt :TagbarToggle<CR>
-nnoremap <silent> <leader>to :TagbarOpen jf<CR>
-"}
-
-" Ctrl-P {
-let g:ctrlp_working_path_mode = 'ra'
-"}
-
-" Airline {
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#whitespace#mixed_indent_algo = 1
-let g:airline_skip_empty_sections = 1
-let g:airline_section_b = '%{getcwd()}'
-"let g:airline_section_c = '%f'
-" }
-
-" Rooter {
-let g:rooter_use_lcd = 1 " Use local :lcd instead of :cd
-let g:rooter_patterns = ['.git/', '.git', '.hg/', '._darcs/', '.bzr/', '.svn/']
-map <silent> <unique> <Leader>pcd <Plug>RooterChangeToRootDirectory
-" }
-
-" PHPQA {
-let g:phpqa_messdetector_autorun = 0
-let g:phpqa_open_loc = 0 " Don't open location list by default
-" }
-
-" Vdebug {
-if !exists('g:vdebug_options')
-  let g:vdebug_options = {}
-endif
-let g:vdebug_options['path_maps'] = { '/src': $HOME . '/Sites' }
-" }
-
-" Syntastic {
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " proprietary attribute \"integrity\"", " proprietary attribute \"crossorigin\""]
-let g:syntastic_typescript_checkers = ['tslint', 'tsc']
-" }
-
-" vim-json {
-let g:vim_json_syntax_conceal = 0
-" }
 " }
 
 " GUI Settings {
@@ -451,17 +257,6 @@ function! InitializeDirectories()
 endfunction
 call InitializeDirectories()
 
-function! NERDTreeInitAsNeeded()
-	redir => bufoutput
-	buffers!
-	redir END
-	let idx = stridx(bufoutput, "NERD_tree")
-	if idx > -1
-		NERDTreeMirror
-		NERDTreeFind
-		wincmd l
-	endif
-endfunction
 " }
 
 " Use local vimrc if available {
