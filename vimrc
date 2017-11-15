@@ -1,6 +1,6 @@
 
 " Modeline and Notes {
-" vim: set foldmarker={,} foldlevel=0 foldmethod=marker:
+" vim: set filetype=vim foldmarker={,} foldlevel=0 foldmethod=marker: 
 " }
 
 " Environment {
@@ -54,7 +54,7 @@ set cursorline
 
 if has('cmdline_info')
   set ruler
-  set rulerformat=%30(%=%n%y%m%r%w\ %l,%c%V\ %P%)
+  set rulerformat=%30(%=%y%m%r%w\ %l,%c%V\ %P%)
   set showcmd
 endif
 set backspace=indent,eol,start
