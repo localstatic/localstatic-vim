@@ -41,8 +41,8 @@ if has('persistent_undo')
 	set undofile
 endif
 
-au BufWinLeave *.* silent! mkview  " make vim save view (folds, cursor, etc as specified in viewoptions above)
-au BufWinEnter *.* silent! loadview " make vim load view (folds, cursor, etc as specified in viewoptions above)
+au BufWinLeave * silent! mkview  " make vim save view (folds, cursor, etc as specified in viewoptions above)
+au BufWinEnter * silent! loadview " make vim load view (folds, cursor, etc as specified in viewoptions above)
 " }
 
 " Vim UI {
