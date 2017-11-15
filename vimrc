@@ -54,9 +54,9 @@ set cursorline
 
 if has('cmdline_info')
 	set ruler                   " show the ruler
-	set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 	set showcmd                 " show partial commands in status line and
 	" selected characters/lines in visual mode
+  set rulerformat=%30(%=%n%y%m%r%w\ %l,%c%V\ %P%)
 endif
 set backspace=indent,eol,start
 set linespace=1
