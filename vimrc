@@ -111,23 +111,18 @@ set matchpairs+=<:>
 " }
 
 " Filetype-specific settings {
-"autocmd FileType c,cpp,java,php,js,ts,python,twig,xml,yml set formatoptions-=t
-autocmd FileType python setlocal noexpandtab
-autocmd FileType php setlocal expandtab
-autocmd FileType ruby,eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-autocmd FileType javascript,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-autocmd FileType html,xhtml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-"au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+augroup filetypesettings
+	autocmd!
+	autocmd FileType python setlocal noexpandtab
+augroup END
 
 augroup filetypedetect
+	autocmd!
 	autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 	autocmd BufNew,BufNewFile,BufRead *.module :set filetype=php " Drupal module
 	autocmd BufNew,BufNewFile,BufRead *.sls :set filetype=yaml " Salt state files
 	autocmd BufNew,BufNewFile,BufRead *.ts :set filetype=typescript
 augroup END
-
 " }
 
 " Key Mappings {
