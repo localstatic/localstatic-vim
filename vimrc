@@ -17,41 +17,41 @@ endif
 " }
 
 " General {
-filetype plugin indent on   " Automatically detect file types.
-syntax on                   " syntax highlighting
-set mouse=a                 " automatically enable mouse usage
+filetype plugin indent on
+syntax on
+
 scriptencoding utf-8
 
-set shortmess+=filmnrxoOtT "F      " abbrev. of messages (avoids 'hit enter')
-set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
-set virtualedit=onemore         " allow for cursor beyond last character
-set history=1000                " Store a ton of history (default is 20)
-set hidden                      " allow buffer switching without saving
+set mouse=a
 
-set nobackup " Don't create annoying backup files
-set noswapfile " Swap files? Meh.
+set shortmess+=filmnrx " maybe also oOtT
+set viewoptions=folds,options,cursor,unix,slash
+set virtualedit=onemore
+set history=1000
+set hidden
+
+set nobackup
+set noswapfile
 
 "if has('syntax')
 	"set spelllang=en_us " Set spelling language
 "endif
 
-" Setting up the directories {
 if has('persistent_undo')
-	set undofile                " so is persistent undo ...
 	set undolevels=1000         " maximum number of changes that can be undone
 	set undoreload=10000        " maximum number lines to save for undo on a buffer reload
+	set undofile
 endif
-" Could use * rather than *.*, but I prefer to leave .files unsaved
-au BufWinLeave *.* silent! mkview  "make vim save view (state) (folds, cursor, etc)
-au BufWinEnter *.* silent! loadview "make vim load view (state) (folds, cursor, etc)
-" }
+
+au BufWinLeave *.* silent! mkview  " make vim save view (folds, cursor, etc as specified in viewoptions above)
+au BufWinEnter *.* silent! loadview " make vim load view (folds, cursor, etc as specified in viewoptions above)
 " }
 
 " Vim UI {
-set background=dark         " Assume a dark background
-set showmode                    " display the current mode
+set background=dark
+set showmode
 
-set cursorline                  " highlight current line
+set cursorline
 
 if has('cmdline_info')
 	set ruler                   " show the ruler
@@ -59,6 +59,11 @@ if has('cmdline_info')
 	set showcmd                 " show partial commands in status line and
 	" selected characters/lines in visual mode
 endif
+set backspace=indent,eol,start
+set linespace=1
+set number
+set showmatch
+set winminheight=0
 
 if has('statusline')
 	set laststatus=2
@@ -74,43 +79,37 @@ if has('statusline')
 	set statusline+=%=                         " split between left- and right-aligned info"
 	set statusline+=%-8.(%l,%c%V%)\ %p%%       " file nav info
 endif
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 
-set backspace=indent,eol,start  " backspace for dummies
-set linespace=1                 " Extra pixels between rows
-set number                      " Line numbers on
-set showmatch                   " show matching brackets/parenthesis
-set incsearch                   " find as you type search
-set hlsearch                    " highlight search terms
-set winminheight=0              " windows can be 0 line high
-set ignorecase                  " case insensitive search
-set smartcase                   " case sensitive when uc present
-set wildmenu                    " show list instead of just completing
-set wildmode=list:longest,full  " command <Tab> completion, list matches, then longest common part, then all.
-set whichwrap=b,s,h,l,<,>,[,]   " backspace and cursor keys wrap to
-set scrolljump=5                " lines to scroll when cursor leaves screen
-set scrolloff=3                 " minimum lines to keep above and below cursor
-set foldenable                  " auto fold code
-set list                        " Show list characters (tab, EOL, etc as set in listchars)
-set listchars=tab:,.,trail:.,extends:#,precedes:#,nbsp:. " Show potentially-problematic whitespace
-set splitright                  " New splits to the right
-set splitbelow                  " New splits below
+set wildmenu
+set wildmode=list:longest,full
+
+set whichwrap=b,s,h,l,<,>,[,]
+
+set scrolljump=5
+set scrolloff=5
+
+set foldenable
+
+set list
+set listchars=tab:,.,trail:.,extends:#,precedes:#,nbsp:.
+
+set splitright
+set splitbelow
 " }
 
 " Formatting {
-set nowrap                       " wrap long lines
-set autoindent                   " indent at the same level of the previous line
-set shiftwidth=4                 " use indents of 4 spaces
-set noexpandtab                  " tabs are tabs, damnit!
-set tabstop=4                    " an indentation every four columns
-set softtabstop=4                " let backspace delete indent
-"set matchpairs+=<:>              " match, to be used with %
-set pastetoggle=<F12>            " pastetoggle (sane indentation on pastes)
-"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
+set nowrap
+set autoindent
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 
-" Keep syntax in sync (hopefully this isn't too slow)
-autocmd BufEnter * :syntax sync fromstart
-
-let g:PHP_vintage_case_default_indent = 1
+set matchpairs+=<:>
 " }
 
 " Filetype-specific settings {
@@ -133,7 +132,7 @@ augroup END
 
 " }
 
-" Key (re)Mappings {
+" Key Mappings {
 
 let mapleader = ','
 
@@ -146,14 +145,13 @@ nnoremap k gk
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
-"clearing highlighted search
+" Clear highlighted search
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" Shortcuts
 " Change Working Directory to that of the current file
 cmap cd. lcd %:p:h
 
-" visual shifting (does not exit Visual mode)
+" Visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
 
@@ -180,10 +178,10 @@ map <Leader>_ <C-w>_
 map <Leader>= <C-w>=
 "map <Leader>gr :GoldenRatioResize<CR>
 
-" Format XML files
+" Validate & Format XML files
 map <Leader>xml :silent 1,$!xmllint --format --recover - 2>/dev/null
 
-" Format JSON files
+" Validate & Format JSON files
 nmap <leader>json :%!jsonlint<CR>
 
 " Convert Markdown to HTML
@@ -201,7 +199,6 @@ map <Leader>trail :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$"
 " }
 
 " GUI Settings {
-" GVIM- (here instead of .gvimrc)
 if has('gui_running')
 	"colorscheme ir_dark
 	"colorscheme wombat
