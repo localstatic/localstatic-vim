@@ -33,9 +33,9 @@ set hidden
 set nobackup
 set noswapfile
 
-"if has('syntax')
-	"set spelllang=en_us " Set spelling language
-"endif
+if has('syntax')
+	set spelllang=en_us
+endif
 
 if has('persistent_undo')
 	set undofile
