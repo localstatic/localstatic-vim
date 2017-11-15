@@ -146,7 +146,7 @@ if has('statusline')
 	"set statusline+=\ %<%f\  "
 	set statusline+=\ %<%t\  "
 	set statusline+=\ [%{getcwd()}]            " Current directory
-	set statusline+=\ %{fugitive#statusline()} " Git Info
+	"set statusline+=\ %{fugitive#statusline()} " Git Info
 	set statusline+=\ [%{&ff}/%Y]              " Filetype
 	set statusline+=%=                         " split between left- and right-aligned info"
 	set statusline+=%-8.(%l,%c%V%)\ %p%%       " file nav info
@@ -361,6 +361,9 @@ let g:ctrlp_working_path_mode = 'ra'
 " Airline {
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
+let g:airline_skip_empty_sections = 1
+let g:airline_section_b = '%{getcwd()}'
+"let g:airline_section_c = '%f'
 " }
 
 " Rooter {
