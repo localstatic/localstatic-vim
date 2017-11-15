@@ -20,6 +20,7 @@ endif
 filetype plugin indent on
 syntax on
 
+set encoding=utf-8
 scriptencoding utf-8
 
 set mouse=a
