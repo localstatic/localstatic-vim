@@ -53,10 +53,9 @@ set showmode
 set cursorline
 
 if has('cmdline_info')
-	set ruler                   " show the ruler
-	set showcmd                 " show partial commands in status line and
-	" selected characters/lines in visual mode
+  set ruler
   set rulerformat=%30(%=%n%y%m%r%w\ %l,%c%V\ %P%)
+  set showcmd
 endif
 set backspace=indent,eol,start
 set linespace=1
