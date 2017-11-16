@@ -57,26 +57,28 @@ if has('cmdline_info')
   set rulerformat=%30(%=%y%m%r%w\ %l,%c%V\ %P%)
   set showcmd
 endif
+
+if has('statusline')
+  set laststatus=2
+
+  set statusline=
+
+  " Break up statusline into one segment per statement to facilitate easy
+  " moving around and enabling/disabling of individual parts
+  set statusline+=%W%H%M%R                   " Options
+  set statusline+=\ %{getcwd()}            " Current directory
+  set statusline+=\ %<%t\  "
+  set statusline+=\ [%{&ff}/%Y]              " Filetype
+  set statusline+=%=                         " split between left- and right-aligned info"
+  set statusline+=%30(%m%r%w\ %l,%c%V\ %P%)
+endif
+
 set backspace=indent,eol,start
 set linespace=1
 set number
 set showmatch
 set winminheight=0
 
-if has('statusline')
-	set laststatus=2
-
-	" Broken down into easy-to-include segments
-	set statusline=                            " empty line to facilitate easy moving around of segments
-	set statusline+=%W%H%M%R                   " Options
-	"set statusline+=\ %<%f\  "
-	set statusline+=\ %<%t\  "
-	set statusline+=\ [%{getcwd()}]            " Current directory
-	"set statusline+=\ %{fugitive#statusline()} " Git Info
-	set statusline+=\ [%{&ff}/%Y]              " Filetype
-	set statusline+=%=                         " split between left- and right-aligned info"
-	set statusline+=%-8.(%l,%c%V%)\ %p%%       " file nav info
-endif
 set incsearch
 set hlsearch
 set ignorecase
