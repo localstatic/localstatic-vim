@@ -104,11 +104,11 @@ if has('statusline')
 
   " Break up statusline into one segment per statement to facilitate easy
   " moving around and enabling/disabling of individual parts
-  set statusline+=\ %{getcwd()}             " Current directory
-  set statusline+=\ %<%t\  "                " Filename
+  "set statusline+=\ %{getcwd()}             " Current directory
+  set statusline+=\ %<%f\  "                " Filename
   set statusline+=\ [%{&ff}]%y              " Filetype
   set statusline+=%=                        " split between left- and right-aligned info"
-  set statusline+=%30(%m%r%w\ %l,%c%V\ %P%) " 
+  set statusline+=%15(%m%r%w\ %l,%c%V\ %P%) " 
 endif
 
 set backspace=indent,eol,start
