@@ -16,6 +16,23 @@ endif
 
 " }
 
+" Dein {
+
+set runtimepath+=/Users/mterry/.vim/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('/Users/mterry/.vim')
+  call dein#begin('/Users/mterry/.vim')
+
+  call dein#add('/Users/mterry/.vim/repos/github.com/Shougo/dein.vim')
+
+  " Plugins {
+  " }
+
+  call dein#end()
+  call dein#save_state()
+endif
+" }
+
 " General {
 filetype plugin indent on
 syntax on
