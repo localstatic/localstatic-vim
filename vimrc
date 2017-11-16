@@ -45,7 +45,6 @@ if dein#load_state($HOME . '/.vim')
     call dein#add('rizzatti/dash.vim')
     call dein#add('scrooloose/nerdcommenter')
     call dein#add('scrooloose/syntastic')
-    call dein#add('tpope/vim-git')
     call dein#add('elzr/vim-json')
     " }
   " }
