@@ -26,6 +26,28 @@ if dein#load_state($HOME . '/.vim')
   call dein#add($HOME . '/.vim/repos/github.com/Shougo/dein.vim')
 
   " Plugins {
+    " General {
+    call dein#add('rking/ag.vim')
+    call dein#add('scrooloose/nerdtree')
+    call dein#add('tpope/vim-surround')
+    call dein#add('vim-scripts/bufexplorer.zip')
+    call dein#add('yssl/QFEnter')
+    " }
+
+    " Colorschemes {
+    call dein#add('chriskempson/vim-tomorrow-theme')
+    " }
+
+    " Development Tools {
+    call dein#add('airblade/vim-gitgutter')
+    call dein#add('airblade/vim-rooter')
+    call dein#add('leafgarland/typescript-vim')
+    call dein#add('rizzatti/dash.vim')
+    call dein#add('scrooloose/nerdcommenter')
+    call dein#add('scrooloose/syntastic')
+    call dein#add('tpope/vim-git')
+    call dein#add('elzr/vim-json')
+    " }
   " }
 
   call dein#end()
@@ -207,6 +229,46 @@ map <Leader>trail :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$"
 
 " }
 
+" Plugin settings {
+
+" Ag.vim {
+map <leader>ag :Ag!<CR>
+" }
+
+" BufExplorer {
+let g:bufExplorerFindActive=0
+" }
+
+" NerdTree {
+map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+map <leader>e :NERDTreeFind<CR>
+nmap <leader>nt :NERDTreeFind<CR>
+
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.DS_Store']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=0
+let NERDTreeKeepTreeInNewTab=1
+let NERDTreeWinSize=50
+" }
+
+" Rooter {
+let g:rooter_use_lcd = 1 " Use local :lcd instead of :cd
+let g:rooter_patterns = ['.git/', '.git', '.hg/', '._darcs/', '.bzr/', '.svn/']
+map <silent> <unique> <Leader>pcd <Plug>RooterChangeToRootDirectory
+" }
+
+" Syntastic {
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " proprietary attribute \"integrity\"", " proprietary attribute \"crossorigin\""]
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+" }
+
+" vim-json {
+let g:vim_json_syntax_conceal = 0
+" }
+
+" }
 " GUI Settings {
 if has('gui_running')
   colorscheme Tomorrow-Night
