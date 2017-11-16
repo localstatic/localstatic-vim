@@ -10,7 +10,7 @@ set nocompatible
 " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
 " across (heterogeneous) systems easier.
 if has('win32') || has('win64')
-	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
 " }
 
@@ -35,11 +35,11 @@ set nobackup
 set noswapfile
 
 if has('syntax')
-	set spelllang=en_us
+  set spelllang=en_us
 endif
 
 if has('persistent_undo')
-	set undofile
+  set undofile
 endif
 
 au BufWinLeave * silent! mkview  " make vim save view (folds, cursor, etc as specified in viewoptions above)
@@ -114,16 +114,16 @@ set matchpairs+=<:>
 
 " Filetype-specific settings {
 augroup filetypesettings
-	autocmd!
-	autocmd FileType python setlocal noexpandtab
+  autocmd!
+  autocmd FileType python setlocal noexpandtab
 augroup END
 
 augroup filetypedetect
-	autocmd!
-	autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
-	autocmd BufNew,BufNewFile,BufRead *.module :set filetype=php " Drupal module
-	autocmd BufNew,BufNewFile,BufRead *.sls :set filetype=yaml " Salt state files
-	autocmd BufNew,BufNewFile,BufRead *.ts :set filetype=typescript
+  autocmd!
+  autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
+  autocmd BufNew,BufNewFile,BufRead *.module :set filetype=php " Drupal module
+  autocmd BufNew,BufNewFile,BufRead *.sls :set filetype=yaml " Salt state files
+  autocmd BufNew,BufNewFile,BufRead *.ts :set filetype=typescript
 augroup END
 " }
 
@@ -206,33 +206,33 @@ endif
 " Functions {
 
 function! InitializeDirectories()
-	let separator = "."
-	let parent = $HOME
-	let prefix = '.vim'
-	let dir_list = {
-				\ 'backup': 'backupdir',
-				\ 'swap': 'directory',
-				\ 'views': 'viewdir'}
+  let separator = "."
+  let parent = $HOME
+  let prefix = '.vim'
+  let dir_list = {
+        \ 'backup': 'backupdir',
+        \ 'swap': 'directory',
+        \ 'views': 'viewdir'}
 
-	if has('persistent_undo')
-		let dir_list['undo'] = 'undodir'
-	endif
+  if has('persistent_undo')
+    let dir_list['undo'] = 'undodir'
+  endif
 
-	for [dirname, settingname] in items(dir_list)
-		let directory = parent . '/' . prefix . dirname . "/"
-		if exists("*mkdir")
-			if !isdirectory(directory)
-				call mkdir(directory)
-			endif
-		endif
-		if !isdirectory(directory)
-			echo "Warning: Unable to create backup directory: " . directory
-			echo "Try: mkdir -p " . directory
-		else
-			let directory = substitute(directory, " ", "\\\\ ", "g")
-			exec "set " . settingname . "=" . directory
-		endif
-	endfor
+  for [dirname, settingname] in items(dir_list)
+    let directory = parent . '/' . prefix . dirname . "/"
+    if exists("*mkdir")
+      if !isdirectory(directory)
+        call mkdir(directory)
+      endif
+    endif
+    if !isdirectory(directory)
+      echo "Warning: Unable to create backup directory: " . directory
+      echo "Try: mkdir -p " . directory
+    else
+      let directory = substitute(directory, " ", "\\\\ ", "g")
+      exec "set " . settingname . "=" . directory
+    endif
+  endfor
 endfunction
 call InitializeDirectories()
 
@@ -240,15 +240,15 @@ call InitializeDirectories()
 
 " Use local vimrc if available {
 if filereadable(expand("~/.vimrc.local"))
-	source ~/.vimrc.local
+  source ~/.vimrc.local
 endif
 " }
 
 " Use local gvimrc if available and gui is running {
 if has('gui_running')
-	if filereadable(expand("~/.gvimrc.local"))
-		source ~/.gvimrc.local
-	endif
+  if filereadable(expand("~/.gvimrc.local"))
+    source ~/.gvimrc.local
+  endif
 endif
 " }
 
