@@ -205,12 +205,12 @@ map <leader>ev :vsplit %%
 map <leader>et :tabedit %%
 
 " Adjust viewports
-map <Leader>_ <C-w>_
-map <Leader>= <C-w>=
-"map <Leader>gr :GoldenRatioResize<CR>
+map <leader>_ <C-w>_
+map <leader>= <C-w>=
+"map <leader>gr :GoldenRatioResize<CR>
 
 " Validate & Format XML files
-map <Leader>xml :silent 1,$!xmllint --format --recover - 2>/dev/null
+map <leader>xml :silent 1,$!xmllint --format --recover - 2>/dev/null
 
 " Validate & Format JSON files
 nmap <leader>json :%!jsonlint<CR>
@@ -225,7 +225,7 @@ nmap <leader>md :%!multimarkdown<CR>
 map <leader>syn :syntax sync fromstart<CR>
 
 " Trim trailing whitespace
-map <Leader>trail :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))<CR>
+map <leader>trail :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))<CR>
 
 " }
 
@@ -256,7 +256,7 @@ let NERDTreeWinSize=50
 " Rooter {
 let g:rooter_use_lcd = 1 " Use local :lcd instead of :cd
 let g:rooter_patterns = ['.git/', '.git', '.hg/', '._darcs/', '.bzr/', '.svn/']
-map <silent> <unique> <Leader>pcd <Plug>RooterChangeToRootDirectory
+map <silent> <unique> <leader>pcd <Plug>RooterChangeToRootDirectory
 " }
 
 " Syntastic {
