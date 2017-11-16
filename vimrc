@@ -269,7 +269,9 @@ let g:vim_json_syntax_conceal = 0
 " }
 
 " }
+
 " GUI Settings {
+
 if has('gui_running')
   colorscheme Tomorrow-Night
 
@@ -279,6 +281,7 @@ if has('gui_running')
 else
   colorscheme default
 endif
+
 " }
 
 " Functions {
