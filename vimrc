@@ -42,6 +42,7 @@ if dein#load_state($HOME . '/.vim')
     call dein#add('airblade/vim-gitgutter')
     call dein#add('airblade/vim-rooter')
     call dein#add('leafgarland/typescript-vim')
+    call dein#add('pangloss/vim-javascript')
     call dein#add('rizzatti/dash.vim')
     call dein#add('scrooloose/nerdcommenter')
     call dein#add('scrooloose/syntastic')
@@ -271,6 +272,10 @@ map <silent> <unique> <leader>pcd <Plug>RooterChangeToRootDirectory
 " Syntastic {
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " proprietary attribute \"integrity\"", " proprietary attribute \"crossorigin\""]
 let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+" }
+
+" vim-javascript {
+let g:javascript_plugin_jsdoc = 1
 " }
 
 " vim-json {
