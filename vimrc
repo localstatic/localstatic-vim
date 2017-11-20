@@ -36,6 +36,7 @@ if dein#load_state($HOME . '/.vim')
 
     " Colorschemes {
     call dein#add('chriskempson/vim-tomorrow-theme')
+    call dein#add('chriskempson/base16-vim')
     " }
 
     " Development Tools {
@@ -287,13 +288,13 @@ let g:vim_json_syntax_conceal = 0
 " GUI Settings {
 
 if has('gui_running')
-  colorscheme Tomorrow-Night
+  colorscheme base16-tomorrow-night
 
   set lines=60
   set columns=200
   set guifont=Hack:h15,Anonymous\ Pro\ for\ Powerline:h14,Anonymous\ Pro:h14,Menlo\ Regular:h15,Andale\ Mono\ Regular:h16,Consolas\ Regular:h16,Courier\ New\ Regular:h18
 else
-  colorscheme default
+  colorscheme Tomorrow-Night
 endif
 
 " }
