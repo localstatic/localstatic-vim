@@ -41,12 +41,12 @@ if dein#load_state($HOME . '/.vim')
     " Development Tools {
     call dein#add('airblade/vim-gitgutter')
     call dein#add('airblade/vim-rooter')
+    call dein#add('elzr/vim-json')
     call dein#add('leafgarland/typescript-vim')
     call dein#add('pangloss/vim-javascript')
     call dein#add('rizzatti/dash.vim')
     call dein#add('scrooloose/nerdcommenter')
     call dein#add('scrooloose/syntastic')
-    call dein#add('elzr/vim-json')
     " }
   " }
 
