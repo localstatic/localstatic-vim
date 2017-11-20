@@ -1,3 +1,6 @@
 .DS_Store
-vim/bundle
 vim/.netrwhist
+vim/.cache
+vim/repos
+vim/cache_vim
+vim/state_vim.vim

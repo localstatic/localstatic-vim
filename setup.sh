@@ -13,7 +13,10 @@ ln -s $dir/vimrc .vimrc
 ln -s $dir/vim .vim
 
 # Install plugins
-vim +PluginInstall +qall
+echo
+echo "run `:call dein#install()` from Vim to install plugins."
 
-# (optional) Install Powerline version of the "Anonymous Pro" font
-
+#
+echo
+echo "(optional) Install the Hack font for increased awesomeness."
+echo "  http://sourcefoundry.org/hack/"
