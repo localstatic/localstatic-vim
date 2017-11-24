@@ -165,6 +165,7 @@ augroup filetypedetect
   autocmd BufNew,BufNewFile,BufRead *.json :set filetype=json
   autocmd BufNew,BufNewFile,BufRead *.ts :set filetype=typescript
   autocmd BufNew,BufNewFile,BufRead *.html,*.htm :set filetype=html
+  autocmd BufNew,BufNewFile,BufRead *.css :set filetype=css
 augroup END
 " }
 
