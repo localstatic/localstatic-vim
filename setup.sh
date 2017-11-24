@@ -3,10 +3,6 @@
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 dir=`pwd`
 
-# Set up submodules
-git submodule init
-git submodule update
-
 # Symlink vimrc & vim into your home directory (i.e. ~/.vimrc and ~/.vim)
 cd
 
@@ -24,10 +20,11 @@ if [ ! -L .vim ]; then
   ln -s $dir/vim .vim
 fi
 
+# Download vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install plugins
-echo
-echo "run `:call dein#install()` from Vim to install plugins."
+vim +PlugInstall +qall
 
 #
 echo

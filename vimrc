@@ -16,44 +16,37 @@ endif
 
 " }
 
-" Dein {
+" Vim-Plug {
 
-set runtimepath+=$HOME/.vim/repos/github.com/Shougo/dein.vim
+call plug#begin('~/.vim/plugged')
 
-if dein#load_state($HOME . '/.vim')
-  call dein#begin($HOME . '/.vim')
+" Plugins {
+" General {
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/bufexplorer.zip'
+Plug 'yssl/QFEnter'
+" }
 
-  call dein#add($HOME . '/.vim/repos/github.com/Shougo/dein.vim')
+" Colorschemes {
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'chriskempson/base16-vim'
+" }
 
-  " Plugins {
-    " General {
-    call dein#add('rking/ag.vim')
-    call dein#add('scrooloose/nerdtree')
-    call dein#add('tpope/vim-surround')
-    call dein#add('vim-scripts/bufexplorer.zip')
-    call dein#add('yssl/QFEnter')
-    " }
+" Development Tools {
+Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
+Plug 'elzr/vim-json'
+Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'rizzatti/dash.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+" }
+" }
 
-    " Colorschemes {
-    call dein#add('chriskempson/vim-tomorrow-theme')
-    call dein#add('chriskempson/base16-vim')
-    " }
-
-    " Development Tools {
-    call dein#add('airblade/vim-gitgutter')
-    call dein#add('airblade/vim-rooter')
-    call dein#add('elzr/vim-json')
-    call dein#add('leafgarland/typescript-vim')
-    call dein#add('pangloss/vim-javascript')
-    call dein#add('rizzatti/dash.vim')
-    call dein#add('scrooloose/nerdcommenter')
-    call dein#add('scrooloose/syntastic')
-    " }
-  " }
-
-  call dein#end()
-  call dein#save_state()
-endif
+call plug#end()
 " }
 
 " General {
