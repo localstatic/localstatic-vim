@@ -264,7 +264,7 @@ let NERDTreeWinSize=50
 " Rooter {
 let g:rooter_use_lcd = 1 " Use local :lcd instead of :cd
 let g:rooter_patterns = ['.git/', '.git', '.hg/', '._darcs/', '.bzr/', '.svn/']
-map <silent> <unique> <leader>pcd <Plug>RooterChangeToRootDirectory
+map <silent> <leader>pcd <Plug>RooterChangeToRootDirectory
 " }
 
 " Syntastic {
