@@ -43,6 +43,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
 " }
 " }
 
@@ -275,6 +276,10 @@ let g:javascript_plugin_jsdoc = 1
 
 " vim-json {
 let g:vim_json_syntax_conceal = 0
+" }
+
+" vim-fugitive {
+map <leader>gb :Gblame
 " }
 
 " }
