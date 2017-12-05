@@ -102,8 +102,8 @@ if has('statusline')
   "set statusline+=\ %{getcwd()}             " Current directory
   set statusline+=\ %<%f\  "                " Filename
   set statusline+=\ [%{&ff}]%y              " Filetype
-  set statusline+=%=                        " split between left- and right-aligned info"
-  set statusline+=%15(%m%r%w\ %l,%c%V\ %P%) " 
+  set statusline+=%=                        " split between left- and right-aligned info
+  set statusline+=%15(%m%r%w\ %l,%c%V\ %P%) " flags, line numbers, etc
 endif
 
 set backspace=indent,eol,start
