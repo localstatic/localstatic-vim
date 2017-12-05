@@ -103,6 +103,7 @@ if has('statusline')
   set statusline+=\ %<%f\  "                " Filename
   set statusline+=\ [%{&ff}]%y              " Filetype
   set statusline+=%=                        " split between left- and right-aligned info
+  set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%* " Syntastic-provided error info
   set statusline+=%15(%m%r%w\ %l,%c%V\ %P%) " flags, line numbers, etc
 endif
 
