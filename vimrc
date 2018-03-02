@@ -64,6 +64,7 @@ set viewoptions=folds,options,cursor,unix,slash
 set virtualedit=onemore
 set history=1000
 set hidden
+set formatoptions+=j
 
 set nobackup
 set noswapfile
