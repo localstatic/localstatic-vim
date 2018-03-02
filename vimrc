@@ -282,7 +282,7 @@ let g:vim_json_syntax_conceal = 0
 " }
 
 " vim-fugitive {
-map <leader>gb :Gblame
+map <leader>gb :Gblame<CR>
 " }
 
 " }
