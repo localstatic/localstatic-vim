@@ -37,12 +37,10 @@ Plug 'chriskempson/base16-vim'
 " Development Tools {
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'elzr/vim-json'
-Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 " }
 " }
