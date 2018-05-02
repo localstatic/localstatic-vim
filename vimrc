@@ -37,6 +37,7 @@ Plug 'chriskempson/base16-vim'
 " Development Tools {
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
