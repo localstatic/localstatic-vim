@@ -22,7 +22,7 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins {
 " General {
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/bufexplorer.zip'
@@ -240,8 +240,12 @@ map <leader>trail :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$"
 
 " Plugin settings {
 
-" Ag.vim {
-map <leader>ag :Ag!<CR>
+" Ack.vim {
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+map <leader>ag :Ack!<CR>
 " }
 
 " BufExplorer {
