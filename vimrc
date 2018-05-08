@@ -162,7 +162,7 @@ augroup END
 
 " Key Mappings {
 
-let mapleader = ','
+let mapleader = ' '
 
 " Wrapped lines goes down/up to next row, rather than next line in file.
 nnoremap j gj
