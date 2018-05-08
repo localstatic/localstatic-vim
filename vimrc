@@ -156,13 +156,7 @@ augroup END
 
 augroup filetypedetect
   autocmd!
-  autocmd BufNew,BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
-  autocmd BufNew,BufNewFile,BufRead *.sls :set filetype=yaml " Salt state files
-  autocmd BufNew,BufNewFile,BufRead *.js :set filetype=javascript
-  autocmd BufNew,BufNewFile,BufRead *.json :set filetype=json
-  autocmd BufNew,BufNewFile,BufRead *.ts :set filetype=typescript
-  autocmd BufNew,BufNewFile,BufRead *.html,*.htm :set filetype=html
-  autocmd BufNew,BufNewFile,BufRead *.css :set filetype=css
+  autocmd BufNew,BufNewFile,BufRead *.sls :setlocal filetype=yaml " Salt state files
 augroup END
 " }
 
