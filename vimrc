@@ -231,6 +231,14 @@ map <leader>trail :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$"
 
 " }
 
+" Grep {
+if executable('ag')
+  " Use ag instead of grep
+  set grepprg=ag\ --vimgrep\ $*
+  set grepformat=%f:%l:%c:%m
+endif
+" }
+
 " Plugin settings {
 
 " Ack.vim {
