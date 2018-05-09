@@ -237,6 +237,9 @@ if executable('ag')
   set grepprg=ag\ --vimgrep\ $*
   set grepformat=%f:%l:%c:%m
 endif
+
+" grep word under cursor
+nmap <leader>gr :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " }
 
 " Plugin settings {
