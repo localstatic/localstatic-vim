@@ -202,7 +202,6 @@ map <leader>et :tabedit %%
 " Adjust viewports
 map <leader>_ <C-w>_
 map <leader>= <C-w>=
-"map <leader>gr :GoldenRatioResize<CR>
 
 " Make netrw sort of like NERDTree
 let g:netrw_banner = 0
