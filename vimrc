@@ -37,6 +37,7 @@ Plug 'chriskempson/base16-vim'
 " Development Tools {
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -254,6 +255,10 @@ map <leader>ag :Ack!<CR>
 
 " BufExplorer {
 let g:bufExplorerFindActive=0
+" }
+
+" Editorconfig {
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " }
 
 " NerdTree {
