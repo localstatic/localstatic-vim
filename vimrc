@@ -41,9 +41,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
+Plug 'w0rp/ale'
 " }
 " }
 
@@ -96,6 +96,19 @@ endif
 if has('statusline')
   set laststatus=2
 
+  function! LinterStatus() abort " {
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? '' : printf(
+          \   '%dW %dE',
+          \   all_non_errors,
+          \   all_errors
+          \)
+  endfunction " }
+
   set statusline=
 
   " Break up statusline into one segment per statement to facilitate easy
@@ -104,7 +117,7 @@ if has('statusline')
   set statusline+=\ %<%f\  "                " Filename
   set statusline+=\ [%{&ff}]%y              " Filetype
   set statusline+=%=                        " split between left- and right-aligned info
-  set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%* " Syntastic-provided error info
+  set statusline+=%#warningmsg#%{LinterStatus()}%* " Linter-provided error info
   set statusline+=%15(%m%r%w\ %l,%c%V\ %P%) " flags, line numbers, etc
 endif
 
@@ -253,12 +266,26 @@ endif
 map <leader>ag :Ack!<CR>
 " }
 
+" ALE {
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\  'typescript': ['tslint'],
+\}
+let g:ale_fixers = {
+\  'typescript': ['prettier'],
+\}
+" }
+
 " BufExplorer {
 let g:bufExplorerFindActive=0
 " }
 
 " Editorconfig {
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+" }
+
+" NerdCommenter {
+let NERDSpaceDelims=1
 " }
 
 " NerdTree {
@@ -279,11 +306,6 @@ let NERDTreeWinSize=50
 let g:rooter_use_lcd = 1 " Use local :lcd instead of :cd
 let g:rooter_patterns = ['.git/', '.git', '.hg/', '._darcs/', '.bzr/', '.svn/']
 map <silent> <leader>pcd <Plug>RooterChangeToRootDirectory
-" }
-
-" Syntastic {
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " proprietary attribute \"integrity\"", " proprietary attribute \"crossorigin\""]
-let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 " }
 
 " vim-javascript {
