@@ -168,10 +168,6 @@ augroup filetypesettings
   autocmd FileType python setlocal noexpandtab
 augroup END
 
-augroup filetypedetect
-  autocmd!
-  autocmd BufNew,BufNewFile,BufRead *.sls :setlocal filetype=yaml " Salt state files
-augroup END
 " }
 
 " Key Mappings {
