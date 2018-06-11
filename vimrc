@@ -125,6 +125,7 @@ endif
 set backspace=indent,eol,start
 set linespace=1
 set number
+set relativenumber
 set showmatch
 set winminheight=0
 
