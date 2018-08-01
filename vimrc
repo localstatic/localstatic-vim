@@ -325,7 +325,11 @@ map <leader>gb :Gblame<CR>
 if has('gui_running')
   colorscheme base16-tomorrow-night
 
-  set guifont=Hack:h15,Anonymous\ Pro\ for\ Powerline:h14,Anonymous\ Pro:h14,Menlo\ Regular:h15,Andale\ Mono\ Regular:h16,Consolas\ Regular:h16,Courier\ New\ Regular:h18
+  if has("gui_gtk2") || has("gui_gtk3")
+    set guifont=Hack\ 15
+  else
+    set guifont=Hack:h15,Anonymous\ Pro\ for\ Powerline:h14,Anonymous\ Pro:h14,Menlo\ Regular:h15,Andale\ Mono\ Regular:h16,Consolas\ Regular:h16,Courier\ New\ Regular:h18
+  endif
 else
   colorscheme Tomorrow-Night
 endif
