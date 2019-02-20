@@ -26,6 +26,7 @@ Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/bufexplorer.zip'
+Plug 'vimwiki/vimwiki'
 Plug 'yssl/QFEnter'
 " }
 
@@ -318,6 +319,14 @@ let g:vim_json_syntax_conceal = 0
 map <leader>gb :Gblame<CR>
 " }
 
+" vimwiki {
+
+let wiki_1 = {}
+let wiki_1.path = '~/Dropbox/Documents/notebook/'
+let wiki_1.syntax = 'markdown'
+let wiki_1.ext = '.md'
+
+let g:vimwiki_list = [wiki_1]
 " }
 
 " GUI Settings {
