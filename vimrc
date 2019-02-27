@@ -23,8 +23,8 @@ call plug#begin('~/.vim/plugged')
 " Plugins {
 " General {
 Plug 'mileszs/ack.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vimwiki/vimwiki'
 Plug 'yssl/QFEnter'
@@ -216,13 +216,8 @@ map <leader>et :tabedit %%
 map <leader>_ <C-w>_
 map <leader>= <C-w>=
 
-" Make netrw sort of like NERDTree
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-map <leader>t :Vexplore<CR>
+let g:netrw_home = $HOME
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " Validate & Format XML files
 map <leader>xml :silent 1,$!xmllint --format --recover - 2>/dev/null
@@ -285,20 +280,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " NerdCommenter {
 let NERDSpaceDelims=1
-" }
-
-" NerdTree {
-map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-map <leader>e :NERDTreeFind<CR>
-nmap <leader>nt :NERDTreeFind<CR>
-
-let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.DS_Store']
-let NERDTreeChDirMode=0
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=0
-let NERDTreeKeepTreeInNewTab=1
-let NERDTreeWinSize=50
 " }
 
 " Rooter {
