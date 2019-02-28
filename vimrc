@@ -308,7 +308,13 @@ let wiki_1.path = '~/Dropbox/Documents/notebook/'
 let wiki_1.syntax = 'markdown'
 let wiki_1.ext = '.md'
 
-let g:vimwiki_list = [wiki_1]
+let wiki_2 = {}
+let wiki_2.path = '~/Documents/notes/'
+let wiki_2.syntax = 'markdown'
+let wiki_2.ext = '.md'
+
+let g:vimwiki_list = [wiki_1, wiki_2]
+
 " }
 
 " GUI Settings {
