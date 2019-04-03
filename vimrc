@@ -217,6 +217,7 @@ map <leader>et :tabedit %%
 map <leader>_ <C-w>_
 map <leader>= <C-w>=
 
+" netrw settings
 let g:netrw_home = $HOME
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
