@@ -22,11 +22,11 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins {
 " General {
+Plug 'jlanzarotta/bufexplorer'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
-Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vimwiki/vimwiki'
 Plug 'yssl/QFEnter'
 " }
