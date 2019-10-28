@@ -39,6 +39,7 @@ Plug 'chriskempson/base16-vim'
 " Development Tools {
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ianks/vim-tsx'
 " Plug 'ludovicchabant/vim-gutentags'
@@ -46,7 +47,6 @@ Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
-Plug 'w0rp/ale'
 " }
 " }
 
