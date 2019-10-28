@@ -47,6 +47,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 " }
 " }
 
