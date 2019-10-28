@@ -3,21 +3,15 @@
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 dir=`pwd`
 
-# Symlink vimrc, gvimrc and vim into your home directory (i.e. ~/.vimrc ~/.gvimrc and ~/.vim)
+# Symlink vim directory into your home directory (i.e. ~/.vim)
 cd
 
-if [ ! -L .vimrc ]; then
-  if [ -e .vimrc ]; then
-    mv .vimrc .vimrc.bak
-  fi
-  ln -s $dir/vimrc .vimrc
+if [ ! -L .vimrc -a -e .vimrc ]; then
+  mv .vimrc .vimrc.bak
 fi
 
-if [ ! -L .gvimrc ]; then
-  if [ -e .gvimrc ]; then
-    mv .gvimrc .gvimrc.bak
-  fi
-  ln -s $dir/gvimrc .gvimrc
+if [ ! -L .gvimrc -a -e .gvimrc ]; then
+  mv .gvimrc .gvimrc.bak
 fi
 
 if [ ! -L .vim ]; then
