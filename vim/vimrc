@@ -47,6 +47,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
+Plug 'tommcdo/vim-fubitive' " Fugitive browse handler (support Bitbucket URLs in `:Gbrowse`)
 " }
 " }
 
