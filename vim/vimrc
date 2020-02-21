@@ -79,6 +79,7 @@ set virtualedit=onemore
 set history=1000
 set hidden
 set formatoptions+=j
+set updatetime=1000 " vim default: 4000, but lower a bit to make gitgutter plugin snappier
 
 set nobackup
 set noswapfile
