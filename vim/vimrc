@@ -168,6 +168,7 @@ set splitbelow
 " Formatting {
 set nowrap
 set autoindent
+set noautoread
 set expandtab
 set shiftwidth=2
 set tabstop=2
