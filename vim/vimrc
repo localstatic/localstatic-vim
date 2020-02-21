@@ -48,7 +48,17 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tommcdo/vim-fubitive' " Fugitive browse handler (support Bitbucket URLs in `:Gbrowse`)
+
+" FZF Integration {
+if exists('/usr/local/opt/fzf')
+  Plug '/usr/local/opt/fzf'
+else
+  Plug 'junegunn/fzf', { 'do': './install --bin' }
+endif
+Plug 'junegunn/fzf.vim'
 " }
+" }
+
 " }
 
 call plug#end()
