@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
 " General {
 Plug 'jlanzarotta/bufexplorer'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
