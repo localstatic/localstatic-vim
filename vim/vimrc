@@ -274,7 +274,7 @@ nmap <leader>gr :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Ack.vim {
 if executable('rg')
-  let g:ackprg = 'rg --vimgrep --no-heading'
+  let g:ackprg = 'rg --vimgrep --smart-case --no-heading'
 elseif executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
