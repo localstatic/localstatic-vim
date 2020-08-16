@@ -134,6 +134,7 @@ if has('statusline')
   set statusline+=\ [%{&ff}]%y              " Filetype
   set statusline+=%=                        " split between left- and right-aligned info
   set statusline+=%{gutentags#statusline('[',']')} " current tag (function, etc)
+  set statusline+=\ %{ObsessionStatus()}    " vim-obsession status
   set statusline+=%#warningmsg#%{LinterStatus()}%* " Linter-provided error info
   set statusline+=%15(%m%r%w\ %l,%c%V\ %P%) " flags, line numbers, etc
 endif
