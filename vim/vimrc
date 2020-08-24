@@ -339,6 +339,9 @@ let g:vimwiki_list = [wiki_1, wiki_2]
 
 nmap -- <Plug>VimwikiRemoveHeaderLevel
 
+" https://frostyx.cz/posts/vimwiki-diary-template
+au BufNewFile ~/Nextcloud/Documents/notebook/diary/*.md :silent 0r !~/.vim/bin/generate-vimwiki-diary-template '%'
+
 " }
 
 " GUI Settings {
