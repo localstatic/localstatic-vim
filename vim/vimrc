@@ -306,7 +306,7 @@ let NERDSpaceDelims=1
 " }
 
 " Rooter {
-let g:rooter_use_lcd = 1 " Use local :lcd instead of :cd
+let g:rooter_cd_cmd="lcd" " Use local :lcd instead of :cd
 let g:rooter_patterns = ['.git/', '.git', '.hg/', '._darcs/', '.bzr/', '.svn/']
 map <silent> <leader>pcd <Plug>RooterChangeToRootDirectory
 " }
