@@ -43,7 +43,7 @@ Plug 'airblade/vim-rooter'
 Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ianks/vim-tsx'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
@@ -133,7 +133,7 @@ if has('statusline')
   set statusline+=\ %<%f\  "                " Filename
   set statusline+=\ [%{&ff}]%y              " Filetype
   set statusline+=%=                        " split between left- and right-aligned info
-  set statusline+=%{gutentags#statusline('[',']')} " current tag (function, etc)
+  " set statusline+=%{gutentags#statusline('[',']')} " current tag (function, etc)
   set statusline+=\ %{ObsessionStatus()}    " vim-obsession status
   set statusline+=%#warningmsg#%{LinterStatus()}%* " Linter-provided error info
   set statusline+=%15(%m%r%w\ %l,%c%V\ %P%) " flags, line numbers, etc
